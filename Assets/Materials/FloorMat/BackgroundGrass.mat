@@ -54,17 +54,22 @@ Material:
     - _DensidadAreasColor: 0
     - _FresnelIntensity: 0
     - _FresnelPower: 1
+    - _NoiseColor2: 0
     - _NoiseIntensidad: 0.25
+    - _NoiseIntensidad2: 0.05
     - _NoisePower: 0.25
     - _NoiseSize: 400
     - _PowerAreasColor: 123123120
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
+    - _Tama_oNoise: 500
+    - _Tama_oNoise2: 5000
     - _Tama_oRuido: 400
     m_Colors:
     - _AreasColor: {r: 1, g: 0.9243028, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 0.9725491, b: 0, a: 0}
     - _MainColor: {r: 0.40964565, g: 0.6792453, b: 0.1954432, a: 0}
-    - _NoiseColor: {r: 0.6331946, g: 0.9622642, b: 0.22241013, a: 0}
+    - _NoiseColor: {r: 0.8490566, g: 0.59472376, b: 0.20425417, a: 0}
+    - _NoiseColor2: {r: 0.667678, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
