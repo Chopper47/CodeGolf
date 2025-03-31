@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1672795461903438571
+--- !u!114 &-3307128682240553051
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass
-  m_Shader: {fileID: -6465566751694194690, guid: 0217fcc130ed14044b4e1c96ac22a243,
+  m_Shader: {fileID: -6465566751694194690, guid: 4174a33804fa1f94cb0d39731fbab097,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_05e1713dff414d12a8d2755184a6cdda_Texture_1_Texture2D:
+        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,20 +55,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DensidadAreasColor: 0
     - _FresnelIntensity: 0.25
     - _FresnelPower: 1
-    - _NoiseIntensidad: 0
-    - _NoisePower: 0.25
-    - _NoiseSize: 400
-    - _PowerAreasColor: 123123120
+    - _FuerzaCuadrados: 0
+    - _NoiseIntensidad: 0.25
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0
-    - _Tama_oRuido: 0
+    - _Tama_oRuido: 60
     m_Colors:
-    - _AreasColor: {r: 1, g: 0.9243028, b: 0, a: 0}
+    - _Color1: {r: 0.48267215, g: 0.74509805, b: 0.08235295, a: 0}
+    - _Color2: {r: 0.6107784, g: 0.6226415, b: 0.32013172, a: 0}
     - _FresnelColor: {r: 1, g: 0.9740773, b: 0, a: 0}
-    - _MainColor: {r: 0.29420617, g: 0.6698113, b: 0.0979441, a: 0}
-    - _NoiseColor: {r: 0.9150943, g: 0.858304, b: 0.28057137, a: 0}
+    - _NoiseColor: {r: 0.68038356, g: 1, b: 0, a: 0}
+    - _Tama_oCuadrados: {r: 4, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
