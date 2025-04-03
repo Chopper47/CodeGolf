@@ -95,6 +95,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloqueHoyo
       objectReference: {fileID: 0}
+    - target: {fileID: 3717181352594274589, guid: 024f6b40fe00f8546bbb50a448f33605,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4627550302303589380, guid: 024f6b40fe00f8546bbb50a448f33605,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
