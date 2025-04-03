@@ -105,6 +105,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RampBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 8773501176841844326, guid: 5582c0415104b594ea54275956021a47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
