@@ -14,7 +14,7 @@ public class BallMovement : MonoBehaviour
     Vector3 dir;
     Vector3 forceToApply;
 
-    bool moved;
+    bool canMove = true;
 
     public TMPro.TMP_InputField tmp;
 
@@ -43,43 +43,62 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         tmp.text = rb.velocity.magnitude.ToString();
-        touches = Input.touches;
-
-        foreach (var t in touches)
+        if (canMove)
         {
-            if (t.fingerId == 0)
+            touches = Input.touches;
+
+            foreach (var t in touches)
             {
-                //Se crea un unico joystick y se añade la fuerza una vez sueltas
-                switch (t.phase)
+                if (t.fingerId == 0)
                 {
-                    case TouchPhase.Began:
-                        //Debug.Log(t.position);
-                        joystickParent.SetActive(true);
-                        startingPos = new Vector3(t.position.x,t.position.y, 0f);
-                        joystickParent.transform.localPosition = new Vector3(t.position.x, t.position.y, 0f);
-                        break;
-                    case TouchPhase.Moved:
-                        dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
+                    //Se crea un unico joystick y se añade la fuerza una vez sueltas
+                    switch (t.phase)
+                    {
+                        case TouchPhase.Began:
+                            //Debug.Log(t.position);
+                            joystickParent.SetActive(true);
+                            startingPos = new Vector3(t.position.x, t.position.y, 0f);
+                            joystickParent.transform.localPosition = new Vector3(t.position.x, t.position.y, 0f);
+                            break;
+                        case TouchPhase.Moved:
+                            dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
 
-                        if(dir.magnitude > maxJoystickDistance)
-                        {
-                            joystick.transform.localPosition = dir.normalized * maxJoystickDistance;
-                        }
-                        else
-                        {
-                            joystick.transform.localPosition = dir;
-                        }
+                            if (dir.magnitude > maxJoystickDistance)
+                            {
+                                joystick.transform.localPosition = dir.normalized * maxJoystickDistance;
+                            }
+                            else
+                            {
+                                joystick.transform.localPosition = dir;
+                            }
 
-                        break;
-                    case TouchPhase.Ended:
-                        forceToApply = -(new Vector3(dir.x, 0f, dir.y));
-                        rb.AddForce(forceToApply.normalized * inputForce, ForceMode.Force);
-                        joystickParent.SetActive(false);
-                        joystick.transform.localPosition = Vector3.zero;
-                        break;
+                            break;
+                        case TouchPhase.Ended:
+                            forceToApply = -(new Vector3(dir.x, 0f, dir.y));
+                            rb.AddForce(forceToApply.normalized * inputForce, ForceMode.Force);
+                            joystickParent.SetActive(false);
+                            joystick.transform.localPosition = Vector3.zero;
+                            break;
+                    }
                 }
             }
         }
+    }
+
+    public void Grabbed()
+    {
+        canMove = false;
+        rb.velocity = Vector3.zero;
+    }
+
+    public void ApplyForce(Vector3 dir, float force)
+    {
+        rb.AddForce(dir*force, ForceMode.Force);
+    }
+
+    public void NotGrabbed()
+    {
+        canMove = true;
     }
 
 }

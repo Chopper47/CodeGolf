@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ReflectionForce : MonoBehaviour
 {
-    public float forceLoss =0.4f;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -45,6 +44,6 @@ public class ReflectionForce : MonoBehaviour
             bounceVector = -dir;
         }
 
-        rb.velocity = bounceVector.normalized * speed * forceLoss;
+        rb.velocity = bounceVector.normalized * speed;
     }
 }
