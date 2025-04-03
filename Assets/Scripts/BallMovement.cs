@@ -9,10 +9,16 @@ public class BallMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public LerpCamera lerp;
+
     Touch[] touches;
     Vector3 startingPos;
     Vector3 dir;
     Vector3 forceToApply;
+
+    bool moved;
+
+    public TMPro.TMP_InputField tmp;
 
     [Header(" --- Joystick Variables --- ")]
     public GameObject joystickParent;
@@ -38,6 +44,7 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
+        tmp.text = rb.velocity.magnitude.ToString();
         touches = Input.touches;
 
         foreach (var t in touches)
@@ -69,11 +76,17 @@ public class BallMovement : MonoBehaviour
                     case TouchPhase.Ended:
                         forceToApply = -(new Vector3(dir.x, 0f, dir.y));
                         rb.AddForce(forceToApply.normalized * inputForce, ForceMode.Force);
+                        Moved();
                         joystickParent.SetActive(false);
                         joystick.transform.localPosition = Vector3.zero;
                         break;
                 }
             }
         }
+    }
+
+    public void Moved()
+    {
+        lerp.ActivateLerp();
     }
 }
