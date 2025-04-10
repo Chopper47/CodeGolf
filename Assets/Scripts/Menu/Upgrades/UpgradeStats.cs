@@ -7,6 +7,6 @@ public class UpgradeStats : MonoBehaviour
     
     public void UpgradeForce(float amountToUpgrade)
     {
-        PlayerPrefs.SetFloat("inputForce", PlayerPrefs.GetFloat("inputForce") + amountToUpgrade);
+        PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
     }
 }
