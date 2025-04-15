@@ -45,6 +45,7 @@ public class BallMovement : MonoBehaviour
         tmp.text = rb.velocity.magnitude.ToString();
         if (canMove)
         {
+
             touches = Input.touches;
 
             foreach (var t in touches)
