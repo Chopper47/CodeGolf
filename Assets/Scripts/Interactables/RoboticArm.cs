@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoboticArm : MonoBehaviour
 {
     public Transform grabPoint;
 
     public GameObject ballFollow;
+
+    public float throwForce = 5f;
 
     Animator animator;
 
@@ -22,7 +25,7 @@ public class RoboticArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +36,10 @@ public class RoboticArm : MonoBehaviour
 
             if (ball)
             {
+                ball.GetComponent<Collider>().isTrigger = true;
+                ball.GetComponent<Rigidbody>().useGravity = false;
+                ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+
                 animator.SetBool("grabbed", true);
                 ball.transform.position = grabPoint.position;
                 ball.transform.parent = ballFollow.transform;
@@ -54,7 +61,19 @@ public class RoboticArm : MonoBehaviour
 
     public void Throw()
     {
-        ball.ApplyForce(new Vector3(1,0,0), 5f);
         ball.transform.parent = null;
+        ball.ApplyForce(-transform.right, throwForce);
+        ball.NotGrabbed();
+        StartCoroutine(SolidBall());
+
+    }
+
+    IEnumerator SolidBall()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        ball.GetComponent<Collider>().isTrigger = false;
+        ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        ball.GetComponent<Rigidbody>().useGravity = true;
     }
 }
