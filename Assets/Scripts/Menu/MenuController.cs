@@ -41,7 +41,6 @@ public class MenuController : MonoBehaviour
 
             if (o.GetComponent<Button>())
             {
-                Debug.Log(o);
                 buttonsInScene.Add(o);
             }
         }

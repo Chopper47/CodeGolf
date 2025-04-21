@@ -25,7 +25,6 @@ public class SetSoundsToButtons : MonoBehaviour
 
     void OnClick()
     {
-        Debug.Log("CLICKED");
         SoundManager.instance.PlaySound(SoundType.BUTTONCLICK, Random.Range(0.5f, 1f));
     }
 }
