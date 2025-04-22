@@ -247,7 +247,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &43056167
@@ -683,7 +683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 614, y: 1341}
+  m_AnchoredPosition: {x: 614, y: 1318}
   m_SizeDelta: {x: 300.0642, y: 284.6973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125448670
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1796444685}
+      - m_Target: {fileID: 1562274032}
         m_TargetAssemblyTypeName: UpgradeStats, Assembly-CSharp
         m_MethodName: UpgradeForce
         m_Mode: 4
@@ -1914,6 +1914,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1562274032}
+        m_TargetAssemblyTypeName: UpgradeStats, Assembly-CSharp
+        m_MethodName: CostToUpgrade
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2560,7 +2572,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &624736094
@@ -2776,7 +2788,7 @@ MonoBehaviour:
   m_margin: {x: -409.98282, y: 0, z: -333.22876, w: -110.6084}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &653763455
@@ -3119,7 +3131,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &738902918
@@ -3654,7 +3666,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -375.33337, w: -36.742188}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &960463049
@@ -4669,56 +4681,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149912265}
   m_CullTransparentMesh: 1
---- !u!1 &1178499473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1178499475}
-  - component: {fileID: 1178499474}
-  m_Layer: 0
-  m_Name: PlayerInfoController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1178499474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178499473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8e224f07d92fde4a9be488fc37518b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldAmount: 0
-  gemAmount: 0
-  strengthLevel: 0
-  accuracyLevel: 0
-  shieldLevel: 0
-  levelsCompleted: 0
---- !u!4 &1178499475
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178499473}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 604.09625, y: 1239.9797, z: 448.88867}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208488087
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,7 +5233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 519.94, y: 1424}
+  m_AnchoredPosition: {x: 519.94, y: 1397}
   m_SizeDelta: {x: 210.1218, y: 180.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321609847
@@ -5539,10 +5501,10 @@ RectTransform:
   - {fileID: 843543056}
   - {fileID: 646207953}
   - {fileID: 643622989}
+  - {fileID: 1796444684}
   - {fileID: 1905854951}
   - {fileID: 885705910}
   - {fileID: 335853653}
-  - {fileID: 1796444684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5749,7 +5711,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -362.82257, w: -36.742188}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1481589955
@@ -5804,7 +5766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7b0f94a114d5a4c861663f5b9cfe7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1178499474}
+  player: {fileID: 1562274031}
 --- !u!1 &1534377310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,9 +6133,11 @@ GameObject:
   - component: {fileID: 1562274030}
   - component: {fileID: 1562274029}
   - component: {fileID: 1562274028}
+  - component: {fileID: 1562274031}
+  - component: {fileID: 1562274032}
   m_Layer: 0
   m_Name: MenuController
-  m_TagString: Untagged
+  m_TagString: MenuController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6217,6 +6181,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562274031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e224f07d92fde4a9be488fc37518b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldAmount: 0
+  gemAmount: 0
+  strengthLevel: 0
+  accuracyLevel: 0
+  shieldLevel: 0
+  levelsCompleted: 0
+  goldAmountText: {fileID: 2125255880}
+  gemAmountText: {fileID: 980499534}
+--- !u!114 &1562274032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517c05cba93237c4aa39af561d049fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1562309532
 GameObject:
   m_ObjectHideFlags: 0
@@ -6552,7 +6548,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -152.97836, w: -36.742188}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1593533067
@@ -7048,7 +7044,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1666261802
@@ -7311,7 +7307,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796444684}
-  - component: {fileID: 1796444685}
   m_Layer: 5
   m_Name: UpgradeMenu
   m_TagString: Untagged
@@ -7343,18 +7338,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1796444685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796444683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517c05cba93237c4aa39af561d049fa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1818461642
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,5 +8205,4 @@ SceneRoots:
   - {fileID: 1562274030}
   - {fileID: 1374389759}
   - {fileID: 824633423}
-  - {fileID: 1178499475}
   - {fileID: 1530286609}
