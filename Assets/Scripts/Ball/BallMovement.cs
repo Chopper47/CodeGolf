@@ -20,7 +20,9 @@ public class BallMovement : MonoBehaviour
     Vector3 dir;
     Vector3 forceToApply;
 
-    bool canMove = true;
+    bool grabbed = false;
+    bool stoppedMoving = true;
+    bool checkSpeed = false;
 
     public TMPro.TMP_InputField tmp;
 
@@ -35,6 +37,11 @@ public class BallMovement : MonoBehaviour
 
     ChangeCamRotation change;
     Transform lastChangeTransform;
+
+    public void Awake()
+    {
+        checkSpeed = false;
+    }
 
     private void Start()
     {
@@ -54,7 +61,25 @@ public class BallMovement : MonoBehaviour
     private void Update()
     {
         tmp.text = rb.velocity.magnitude.ToString();
-        if (canMove)
+
+        
+        if(!stoppedMoving && checkSpeed)
+        {
+            if (Mathf.Approximately(rb.velocity.magnitude, 0.03f))
+            {
+                Debug.Log("Aproxed 0");
+                stoppedMoving = true;
+            }
+        }
+
+        if(stoppedMoving && checkSpeed)
+        {
+            Debug.Log("stopped");
+            rb.velocity = Vector3.zero;
+            checkSpeed = false;
+        }
+
+        if (stoppedMoving && !grabbed)
         {
             touches = Input.touches;
 
@@ -72,21 +97,37 @@ public class BallMovement : MonoBehaviour
                             joystickParent.transform.localPosition = new Vector3(t.position.x, t.position.y, 0f);
                             break;
                         case TouchPhase.Moved:
-                            dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
-
-                            if (dir.magnitude > maxJoystickDistance)
+                            if(!grabbed)
                             {
-                                joystick.transform.localPosition = dir.normalized * maxJoystickDistance;
+                                dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
+
+                                if (dir.magnitude > maxJoystickDistance)
+                                {
+                                    joystick.transform.localPosition = dir.normalized * maxJoystickDistance;
+                                }
+                                else
+                                {
+                                    joystick.transform.localPosition = dir;
+                                }
                             }
                             else
                             {
-                                joystick.transform.localPosition = dir;
+                                joystickParent.SetActive(false);
+                                joystick.transform.localPosition = Vector3.zero;
                             }
-
+                            break;
+                        case TouchPhase.Stationary:
+                            if(grabbed)
+                            {
+                                joystickParent.SetActive(false);
+                                joystick.transform.localPosition = Vector3.zero;
+                            }
                             break;
                         case TouchPhase.Ended:
                             forceToApply = -(new Vector3(dir.x, 0f, dir.y));
                             rb.AddForce(forceToApply.normalized * (inputForce + strengthAdded), ForceMode.Force);
+                            stoppedMoving = false;
+                            StartCoroutine(TimerForStopCheck());
                             joystickParent.SetActive(false);
                             joystick.transform.localPosition = Vector3.zero;
                             break;
@@ -111,9 +152,16 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    IEnumerator TimerForStopCheck()
+    {
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Check set true");
+        checkSpeed = true;
+    }
+
     public void Grabbed()
     {
-        canMove = false;
+        grabbed = true;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
@@ -125,11 +173,11 @@ public class BallMovement : MonoBehaviour
 
     public void NotGrabbed()
     {
-        canMove = true;
+        grabbed = false;
     }
 
     public bool IsGrabbed()
     {
-        return canMove;
+        return grabbed;
     }
 }

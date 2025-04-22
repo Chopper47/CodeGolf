@@ -39,25 +39,41 @@ public class ChangeCamRotation : MonoBehaviour
         switch (dir)
         {
             case direction.horizontal:
-                cinemachine.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
+                StartCoroutine(LerpRotationHorizontal(1f));
                 break;
             case direction.vertical:
-                cinemachine.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+                StartCoroutine(LerpRotationVertical(1f));
                 break;
         }
     }
 
-    IEnumerator LerpRotation()
+    IEnumerator LerpRotationHorizontal(float rotationTime)
     {
         float timer = 0f;
 
-        while (timer < 0.5f)
+        while (timer < rotationTime)
         {
-            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(0f, 90f, timer / 0.5f), 0f);
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(0f, 90f, timer / rotationTime), 0f);
             timer += Time.deltaTime;
             yield return null;
         }
 
+        cinemachine.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
+        yield return null;
+    }
+
+    IEnumerator LerpRotationVertical(float rotationTime)
+    {
+        float timer = 0f;
+
+        while (timer < rotationTime)
+        {
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(90f, 0f, timer / rotationTime), 0f);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        cinemachine.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
         yield return null;
     }
 }
