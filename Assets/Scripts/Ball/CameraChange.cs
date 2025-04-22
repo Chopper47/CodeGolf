@@ -47,6 +47,11 @@ public class ChangeCamRotation : MonoBehaviour
         }
     }
 
+    public bool VerticalCamera()
+    {
+        return dir == direction.vertical;
+    }
+
     IEnumerator LerpRotationHorizontal(float rotationTime)
     {
         float timer = 0f;

@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour
 
     public float strengthScaling = 2.5f;
 
+    float distanceProportion;
+
     public LayerMask mask;
 
     float strengthAdded;
@@ -24,7 +26,13 @@ public class BallMovement : MonoBehaviour
     bool stoppedMoving = true;
     bool checkSpeed = false;
 
+    bool verticalInput = true;
+
+    bool aiming = false;
+
     public TMPro.TMP_InputField tmp;
+
+    DirectionIndicator directionIndicator;
 
     [Header(" --- Joystick Variables --- ")]
     public GameObject joystickParent;
@@ -41,6 +49,7 @@ public class BallMovement : MonoBehaviour
     public void Awake()
     {
         checkSpeed = false;
+        directionIndicator = GetComponent<DirectionIndicator>();
     }
 
     private void Start()
@@ -65,7 +74,8 @@ public class BallMovement : MonoBehaviour
         
         if(!stoppedMoving && checkSpeed)
         {
-            if (Mathf.Approximately(rb.velocity.magnitude, 0.03f))
+            Debug.Log("Checking speed");
+            if (rb.velocity.magnitude <= 0.03f)
             {
                 Debug.Log("Aproxed 0");
                 stoppedMoving = true;
@@ -76,6 +86,7 @@ public class BallMovement : MonoBehaviour
         {
             Debug.Log("stopped");
             rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             checkSpeed = false;
         }
 
@@ -91,10 +102,14 @@ public class BallMovement : MonoBehaviour
                     switch (t.phase)
                     {
                         case TouchPhase.Began:
-                            //Debug.Log(t.position);
+                            directionIndicator.ResetRotation();
+                            aiming = true;
                             joystickParent.SetActive(true);
                             startingPos = new Vector3(t.position.x, t.position.y, 0f);
                             joystickParent.transform.localPosition = new Vector3(t.position.x, t.position.y, 0f);
+                            dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
+                            distanceProportion = 0f;
+                            directionIndicator.AppearArrow();
                             break;
                         case TouchPhase.Moved:
                             if(!grabbed)
@@ -104,10 +119,12 @@ public class BallMovement : MonoBehaviour
                                 if (dir.magnitude > maxJoystickDistance)
                                 {
                                     joystick.transform.localPosition = dir.normalized * maxJoystickDistance;
+                                    distanceProportion = 1f;
                                 }
                                 else
                                 {
                                     joystick.transform.localPosition = dir;
+                                    distanceProportion = dir.magnitude/maxJoystickDistance;
                                 }
                             }
                             else
@@ -124,8 +141,18 @@ public class BallMovement : MonoBehaviour
                             }
                             break;
                         case TouchPhase.Ended:
-                            forceToApply = -(new Vector3(dir.x, 0f, dir.y));
-                            rb.AddForce(forceToApply.normalized * (inputForce + strengthAdded), ForceMode.Force);
+                            aiming = false;
+                            directionIndicator.DissapearArrow();
+
+                            if(verticalInput)
+                            {
+                                forceToApply = -new Vector3(dir.x, 0f, dir.y);
+                            }
+                            else
+                            {
+                                forceToApply = new Vector3(-dir.y, 0f, dir.x);
+                            }
+                            rb.AddForce(forceToApply.normalized * ((inputForce + strengthAdded) * distanceProportion), ForceMode.Force);
                             stoppedMoving = false;
                             StartCoroutine(TimerForStopCheck());
                             joystickParent.SetActive(false);
@@ -146,10 +173,38 @@ public class BallMovement : MonoBehaviour
 
                 if (change)
                 {
+                    verticalInput = change.VerticalCamera();
                     change.ChangeCameraRotation();
                 }
             }
         }
+    }
+
+    public Vector3 GetDirectionValue()
+    {
+        if (verticalInput)
+        {
+            return -new Vector3(dir.x, 0f, dir.y);
+        }
+        else
+        {
+            return new Vector3(-dir.y, 0f, dir.x);
+        }
+    }
+
+    public bool IsCameraVertical()
+    {
+        return verticalInput;
+    }
+
+    public bool AimState()
+    {
+        return aiming;
+    }
+    
+    public float DistanceProportion()
+    {
+        return distanceProportion;
     }
 
     IEnumerator TimerForStopCheck()

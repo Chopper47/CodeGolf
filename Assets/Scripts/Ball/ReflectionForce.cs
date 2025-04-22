@@ -19,7 +19,7 @@ public class ReflectionForce : MonoBehaviour
     {
         GameObject wall = collision.gameObject;
 
-        if (wall.layer == 6 && movement.IsGrabbed())
+        if (wall.layer == 6 && !movement.IsGrabbed())
         {
             BounceOffWall(collision.contacts[0].point);
         }
