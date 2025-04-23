@@ -18,10 +18,10 @@ public class HoleGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        BallMovement ball = other.GetComponent<BallMovement>();
+        HitCounter ball = other.GetComponent<HitCounter>();
         if (ball)
         {
-            Debug.Log("ganaste");
+            ball.End();
         }
     }
 }

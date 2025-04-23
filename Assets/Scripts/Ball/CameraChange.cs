@@ -33,16 +33,22 @@ public class ChangeCamRotation : MonoBehaviour
         cinemachine = FindAnyObjectByType<CinemachineVirtualCamera>().gameObject;
     }
 
-    public void ChangeCameraRotation()
+    public void ChangeCameraRotation(bool vertical)
     {
         Debug.Log("Rotate");
         switch (dir)
         {
             case direction.horizontal:
-                StartCoroutine(LerpRotationHorizontal(1f));
+                if(vertical)
+                {
+                    StartCoroutine(LerpRotationHorizontal(1f));
+                }
                 break;
             case direction.vertical:
-                StartCoroutine(LerpRotationVertical(1f));
+                if(!vertical)
+                {
+                    StartCoroutine(LerpRotationVertical(1f));
+                }
                 break;
         }
     }

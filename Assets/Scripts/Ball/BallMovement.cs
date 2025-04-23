@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour
 
     public float strengthScaling = 2.5f;
 
+    public float slowProportion = 2f;
+
     float distanceProportion;
 
     public LayerMask mask;
@@ -22,6 +24,8 @@ public class BallMovement : MonoBehaviour
     Vector3 dir;
     Vector3 forceToApply;
 
+    bool slowed;
+
     bool grabbed = false;
     bool stoppedMoving = true;
     bool checkSpeed = false;
@@ -31,6 +35,8 @@ public class BallMovement : MonoBehaviour
     bool aiming = false;
 
     public TMPro.TMP_InputField tmp;
+
+    HitCounter hitCounter;
 
     DirectionIndicator directionIndicator;
 
@@ -50,6 +56,7 @@ public class BallMovement : MonoBehaviour
     {
         checkSpeed = false;
         directionIndicator = GetComponent<DirectionIndicator>();
+        hitCounter = GetComponent<HitCounter>();
     }
 
     private void Start()
@@ -152,11 +159,21 @@ public class BallMovement : MonoBehaviour
                             {
                                 forceToApply = new Vector3(-dir.y, 0f, dir.x);
                             }
-                            rb.AddForce(forceToApply.normalized * ((inputForce + strengthAdded) * distanceProportion), ForceMode.Force);
+
+                            float magnitudeToApply = (inputForce + strengthAdded) * distanceProportion;
+
+                            if(slowed)
+                            {
+                                magnitudeToApply /= slowProportion;
+                                slowed = false;
+                            }
+
+                            rb.AddForce(forceToApply.normalized * magnitudeToApply, ForceMode.Force);
                             stoppedMoving = false;
                             StartCoroutine(TimerForStopCheck());
                             joystickParent.SetActive(false);
                             joystick.transform.localPosition = Vector3.zero;
+                            hitCounter.Hit();
                             break;
                     }
                 }
@@ -173,11 +190,16 @@ public class BallMovement : MonoBehaviour
 
                 if (change)
                 {
+                    change.ChangeCameraRotation(verticalInput);
                     verticalInput = change.VerticalCamera();
-                    change.ChangeCameraRotation();
                 }
             }
         }
+    }
+
+    public void Slow()
+    {
+        slowed = true;
     }
 
     public Vector3 GetDirectionValue()
