@@ -68,7 +68,7 @@ Material:
     m_Colors:
     - _CantidadNumeros: {r: 1, g: 1, b: 0, a: 0}
     - _CantidadNumeros2: {r: 4, g: 4, b: 0, a: 0}
-    - _Color: {r: 0, g: 1, b: 0.08852029, a: 0}
+    - _Color: {r: 0.654902, g: 0.9058824, b: 0.15294118, a: 0}
     - _Direccion: {r: 0, g: 1, b: 0, a: 0}
     - _Direccion2: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
