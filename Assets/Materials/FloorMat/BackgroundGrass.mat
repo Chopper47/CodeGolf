@@ -62,7 +62,7 @@ Material:
     - _PowerAreasColor: 123123120
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0
+    - _Smoothness: -7.04
     - _Tama_oNoise: 500
     - _Tama_oNoise2: 5000
     - _Tama_oRuido: 400
