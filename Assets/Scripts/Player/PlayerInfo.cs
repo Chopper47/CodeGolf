@@ -28,10 +28,22 @@ public class PlayerInfo : MonoBehaviour
         goldAmount -= amountToReduce;
         goldAmountText.text = goldAmount.ToString();
     }
+    
+    public void SetGoldAmount(int amountToSet)
+    {
+        goldAmount = amountToSet;
+        goldAmountText.text = goldAmount.ToString();
+    }
 
     public void ChangeGemAmount(int amountToReduce)
     {
         gemAmount -= amountToReduce;
+        gemAmountText.text = gemAmount.ToString();
+    }
+
+    public void SetGemAmount(int amountToSet)
+    {
+        gemAmount = amountToSet;
         gemAmountText.text = gemAmount.ToString();
     }
 }

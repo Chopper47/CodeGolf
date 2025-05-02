@@ -14,14 +14,16 @@ public class SaveManager : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
-        player.goldAmount = data.goldAmount;
-        player.gemAmount = data.gemAmount;
+        player.SetGoldAmount(data.goldAmount);
+        player.SetGemAmount(data.gemAmount);
 
         player.strengthLevel = data.strengthLevel;
         player.accuracyLevel = data.accuracyLevel;
         player.shieldLevel = data.shieldLevel;
 
         player.levelsCompleted = data.levelsCompleted;
+
+
         
     }
 }
