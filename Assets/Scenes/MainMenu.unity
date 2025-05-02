@@ -8797,7 +8797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e224f07d92fde4a9be488fc37518b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmount: 0
+  goldAmount: 1000
   gemAmount: 0
   strengthLevel: 0
   accuracyLevel: 0

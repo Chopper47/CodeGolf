@@ -21,11 +21,13 @@ public class MenuController : MonoBehaviour
 
         foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
         {
+#if UNITY_EDITOR
             if (!EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave))
             {
                 objectsInScene.Add(go);
 
             }
+#endif
         }
 
         return objectsInScene;
