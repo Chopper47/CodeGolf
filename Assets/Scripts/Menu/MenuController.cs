@@ -21,10 +21,10 @@ public class MenuController : MonoBehaviour
 
         foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
         {
+            objectsInScene.Add(go);
 #if UNITY_EDITOR
             if (!EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave))
             {
-                objectsInScene.Add(go);
 
             }
 #endif
@@ -48,5 +48,10 @@ public class MenuController : MonoBehaviour
         }
 
         return buttonsInScene;
+    }
+
+    public void MoveResourcesToUpgradePage(Transform resources)
+    {
+        resources.position = new Vector3(resources.position.x, resources.position.y - 100, resources.position.z);
     }
 }
