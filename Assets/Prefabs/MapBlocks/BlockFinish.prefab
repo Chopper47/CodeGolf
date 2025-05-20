@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6992524467389887782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2778377869597467573}
+  - component: {fileID: 247222625448145829}
+  - component: {fileID: 5919802769709807867}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2778377869597467573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992524467389887782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.001, y: 0.73, z: -0.132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4764924051206660361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &247222625448145829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992524467389887782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.43935683, z: 1}
+  m_Center: {x: 0, y: -0.2803216, z: 0}
+--- !u!114 &5919802769709807867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992524467389887782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f3c89c97581e342a1cd131a6f77c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7794879451310236565
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +156,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107886016418433766, guid: d380d475a317f3d48bc179ffe5b6eda0,
+        type: 3}
+      propertyPath: m_Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107886016418433766, guid: d380d475a317f3d48bc179ffe5b6eda0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6558833
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107886016418433766, guid: d380d475a317f3d48bc179ffe5b6eda0,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107886016418433766, guid: d380d475a317f3d48bc179ffe5b6eda0,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6771610200580208069, guid: d380d475a317f3d48bc179ffe5b6eda0,
         type: 3}
@@ -187,7 +273,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8a5e90b0139df4d4ab150ef393c2578f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7697852300813463443, guid: 024f6b40fe00f8546bbb50a448f33605,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2778377869597467573}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3717181352594274589, guid: 024f6b40fe00f8546bbb50a448f33605,
         type: 3}
@@ -229,6 +319,12 @@ MeshCollider:
 --- !u!4 &3422335156343990641 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 024f6b40fe00f8546bbb50a448f33605,
+    type: 3}
+  m_PrefabInstance: {fileID: 2951030712545545882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4764924051206660361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7697852300813463443, guid: 024f6b40fe00f8546bbb50a448f33605,
     type: 3}
   m_PrefabInstance: {fileID: 2951030712545545882}
   m_PrefabAsset: {fileID: 0}
