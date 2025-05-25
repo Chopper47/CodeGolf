@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInfo))]
 public class UpgradeStats : MonoBehaviour
 {
     PlayerInfo playerInfo;
+
+    [Header("Level Texts")]
+    [SerializeField] TextMeshProUGUI forceLevelText;
+    [SerializeField] TextMeshProUGUI accuracyLevelText;
+    [SerializeField] TextMeshProUGUI shieldLevelText;
+
+    [Header("Costs To Upgrade")]
+    public int costToUpgradeForce ;
+    public int costToUpgradeAccuracy;
+    public int costToUpgradeShield;
 
     private void Awake()
     {
@@ -15,11 +26,53 @@ public class UpgradeStats : MonoBehaviour
 
     public void UpgradeForce(float amountToUpgrade)
     {
-        PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
+        if(playerInfo.goldAmount >= costToUpgradeForce)
+        {
+            CostToUpgrade(costToUpgradeForce);
+            playerInfo.strengthLevel += 1;
+            PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
+            ChangeForceLevelText();
+
+        }
+    }
+    public void UpgradeAccuracy(float amountToUpgrade)
+    {
+        if (playerInfo.goldAmount >= costToUpgradeAccuracy)
+        {
+            CostToUpgrade(costToUpgradeAccuracy);
+            playerInfo.accuracyLevel += 1;
+            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
+            ChangeAccuracyLevelText();
+
+        }
+    }
+    public void UpgradeShield(float amountToUpgrade)
+    {
+        if (playerInfo.goldAmount >= costToUpgradeShield)
+        {
+            CostToUpgrade(costToUpgradeShield);
+            playerInfo.shieldLevel += 1;
+            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
+            ChangeShieldLevelText();
+
+        }
     }
 
     public void CostToUpgrade(int cost)
     {
         playerInfo.ChangeGoldAmount(cost);
+    }
+
+    private void ChangeForceLevelText()
+    {
+        forceLevelText.text = "Level: " + playerInfo.strengthLevel;
+    }
+    private void ChangeAccuracyLevelText()
+    {
+        accuracyLevelText.text = "Level: " + playerInfo.accuracyLevel;
+    }
+    private void ChangeShieldLevelText()
+    {
+        shieldLevelText.text = "Level: " + playerInfo.shieldLevel;
     }
 }
