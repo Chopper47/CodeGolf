@@ -24,7 +24,7 @@ public class HitCounter : MonoBehaviour
 
     void UpdateShower()
     {
-        hitsShower.text = "Hits: " + hits;
+        hitsShower.text = "" + hits;
     }
 
     public void End()
