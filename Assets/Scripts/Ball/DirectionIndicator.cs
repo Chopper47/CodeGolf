@@ -12,6 +12,7 @@ public class DirectionIndicator : MonoBehaviour
 
     Quaternion canvasInitialState;
     RectTransform arrow;
+    UnityEngine.UI.Image arrowImage;
     float height;
     float diff;
 
@@ -40,6 +41,7 @@ public class DirectionIndicator : MonoBehaviour
     {
         canvasInitialState = canvas.transform.rotation;
         arrow = directionArrow.GetComponent<RectTransform>();
+        arrowImage = directionArrow.GetComponent<UnityEngine.UI.Image>();
         height = -arrow.offsetMax.y;
         diff = Mathf.Abs(height+height);
         DissapearArrow();
@@ -51,8 +53,6 @@ public class DirectionIndicator : MonoBehaviour
         if(movement.AimState())
         {
             Vector3 dir = movement.GetDirectionValue();
-
-            arrow.offsetMax = new Vector2(arrow.offsetMax.x, height + diff * movement.DistanceProportion());
 
             if(dir.x < 0)
             {
@@ -89,5 +89,10 @@ public class DirectionIndicator : MonoBehaviour
     public void ResetRotation()
     {
         canvas.transform.rotation = canvasInitialState;
+    }
+
+    public void SetFill(float fill)
+    {
+        arrowImage.fillAmount = fill;
     }
 }
