@@ -4,7 +4,26 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager instance;
     public PlayerInfo player;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+    private void Start()
+    {
+        LoadPlayerData();
+        SavePlayerData();
+    }
     public void SavePlayerData()
     {
         SaveSystem.SaveData(player);

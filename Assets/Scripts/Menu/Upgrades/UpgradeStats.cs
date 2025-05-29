@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInfo))]
+
 public class UpgradeStats : MonoBehaviour
 {
-    PlayerInfo playerInfo;
+    [SerializeField]PlayerInfo playerInfo;
 
     [Header("Level Texts")]
     [SerializeField] TextMeshProUGUI forceLevelText;
@@ -20,9 +20,14 @@ public class UpgradeStats : MonoBehaviour
 
     private void Awake()
     {
-        playerInfo = gameObject.GetComponent<PlayerInfo>();
+        
     }
 
+    private void Start()
+    {
+        if(playerInfo == null)
+        playerInfo = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
+    }
 
     public void UpgradeForce(float amountToUpgrade)
     {
@@ -34,6 +39,7 @@ public class UpgradeStats : MonoBehaviour
             ChangeForceLevelText();
 
         }
+        SaveManager.instance.SavePlayerData();
     }
     public void UpgradeAccuracy(float amountToUpgrade)
     {
@@ -45,6 +51,7 @@ public class UpgradeStats : MonoBehaviour
             ChangeAccuracyLevelText();
 
         }
+        SaveManager.instance.SavePlayerData();
     }
     public void UpgradeShield(float amountToUpgrade)
     {
@@ -56,6 +63,7 @@ public class UpgradeStats : MonoBehaviour
             ChangeShieldLevelText();
 
         }
+        SaveManager.instance.SavePlayerData();
     }
 
     public void CostToUpgrade(int cost)
