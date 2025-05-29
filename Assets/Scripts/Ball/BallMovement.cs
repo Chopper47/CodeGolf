@@ -82,7 +82,7 @@ public class BallMovement : MonoBehaviour
         if(!stoppedMoving && checkSpeed)
         {
             Debug.Log("Checking speed");
-            if (rb.velocity.magnitude <= 0.03f)
+            if (rb.velocity.magnitude <= 0.1f)
             {
                 Debug.Log("Aproxed 0");
                 stoppedMoving = true;
@@ -133,6 +133,8 @@ public class BallMovement : MonoBehaviour
                                     joystick.transform.localPosition = dir;
                                     distanceProportion = dir.magnitude/maxJoystickDistance;
                                 }
+
+                                directionIndicator.SetFill(distanceProportion);
                             }
                             else
                             {
