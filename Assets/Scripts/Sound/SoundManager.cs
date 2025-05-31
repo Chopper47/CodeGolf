@@ -8,15 +8,22 @@ public enum SoundType
     BUTTONCLICK,
 
 }
+public enum MusicType
+{
+    MAINMENU,
+
+}
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioClip[] soundList;
+    [SerializeField] private AudioClip[] musicList;
 
     public float musicVolume { get; set; }
     public float sfxVolume { get; set; }
 
     public static SoundManager instance;
-    private AudioSource audioSource;
+    public AudioSource sfxAudioSource;
+    public AudioSource musicAudioSource;
     
     //Singleton
     private void Awake()
@@ -35,8 +42,9 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        
-        audioSource = GetComponent<AudioSource>();
+
+        sfxAudioSource = transform.Find("SFXSource").GetComponent<AudioSource>();
+        musicAudioSource = transform.Find("MusicSource").GetComponent<AudioSource>();
         musicVolume = 1;
         sfxVolume = 1;
 
@@ -44,7 +52,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundOneshot(SoundType sound, float volume = 1)
     {
-        instance.audioSource.PlayOneShot(instance.soundList[(int)sound]);
+        instance.sfxAudioSource.PlayOneShot(instance.soundList[(int)sound]);
     }
 
     public void PlaySound(SoundType sound, float pitch)
@@ -55,16 +63,39 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(SoundType sound, float volume = -99, float pitch = 1)
     {
-        audioSource.clip = instance.soundList[(int)sound];
+        sfxAudioSource.clip = instance.soundList[(int)sound];
         if(volume == -99)
         {
-            audioSource.volume = sfxVolume;
+            sfxAudioSource.volume = sfxVolume;
         }
         else
         {
-            audioSource.volume = volume;
+            sfxAudioSource.volume = volume;
         }
-        audioSource.pitch = pitch;
-        instance.audioSource.Play();
+        sfxAudioSource.pitch = pitch;
+        instance.sfxAudioSource.Play();
+    }
+
+    public void PlayMusic(MusicType music, float volume = -99)
+    {
+        musicAudioSource.clip = instance.musicList[(int)music];
+        if (volume == -99)
+        {
+            musicAudioSource.volume = musicVolume;
+        }
+        else
+        {
+            musicAudioSource.volume = volume;
+        }
+        instance.musicAudioSource.Play();
+    }
+
+    public void ChangeSFXVolume()
+    {
+        sfxAudioSource.volume = sfxVolume;
+    }
+    public void ChangeMusicVolume()
+    {
+        musicAudioSource.volume = musicVolume;
     }
 }
