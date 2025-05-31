@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -3929,7 +3929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -6556,7 +6556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -7519,9 +7519,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274027}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: GoToLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7861,7 +7861,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -9893,7 +9893,6 @@ GameObject:
   - component: {fileID: 1562274032}
   - component: {fileID: 1562274035}
   - component: {fileID: 1562274033}
-  - component: {fileID: 1562274034}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: MenuController
@@ -9969,18 +9968,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63181812c9aaca443a9689946043b17b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1562274034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562274027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22831e3dd9116574db8cac31a3adaed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1562274035
@@ -11072,7 +11059,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562274034}
+      - m_Target: {fileID: 1698358884}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -11332,6 +11319,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666261799}
   m_CullTransparentMesh: 1
+--- !u!1 &1698358883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1698358885}
+  - component: {fileID: 1698358884}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1698358884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698358883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22831e3dd9116574db8cac31a3adaed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1698358885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698358883}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0026416779, y: -0.24580097, z: 6.1092772}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1699867092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3957826075135671009, guid: d47921441996abf429ab370845d667ee,
@@ -13801,3 +13832,4 @@ SceneRoots:
   - {fileID: 1319541809}
   - {fileID: 1475012224}
   - {fileID: 1562486046}
+  - {fileID: 1698358885}

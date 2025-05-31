@@ -29,6 +29,9 @@ public class UpgradeStats : MonoBehaviour
         playerInfo = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
     }
 
+
+    //All three methods upgrade a stat and save it in the player data
+
     public void UpgradeForce(float amountToUpgrade)
     {
         if(playerInfo.goldAmount >= costToUpgradeForce)
@@ -66,11 +69,17 @@ public class UpgradeStats : MonoBehaviour
         SaveManager.instance.SavePlayerData();
     }
 
+
+    /// <summary>
+    /// Take money to upgrade a stat
+    /// </summary>
+    /// <param name="cost"></param>
     public void CostToUpgrade(int cost)
     {
         playerInfo.ChangeGoldAmount(cost);
     }
 
+    //Change the text that shows the level of each stat
     private void ChangeForceLevelText()
     {
         forceLevelText.text = "Level: " + playerInfo.strengthLevel;

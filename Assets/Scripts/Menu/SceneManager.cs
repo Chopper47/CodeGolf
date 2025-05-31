@@ -5,6 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
+    public static SceneManager instance;
+    
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void StartGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
