@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6317729958694898900}
   - component: {fileID: 3323334123473739310}
-  - component: {fileID: 3759213512794254968}
+  - component: {fileID: 4714335932152682850}
   m_Layer: 0
   m_Name: SafeNet
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 50, y: 20, z: 50}
   m_Center: {x: 0, y: -9, z: 0}
---- !u!114 &3759213512794254968
+--- !u!114 &4714335932152682850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,6 +63,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6861511749167434966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc300a73684a00847aaa93f355c181e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4499e1e8b686e7c48bb05bdee4f8018f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limit: -1
