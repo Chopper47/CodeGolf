@@ -50,6 +50,9 @@ public class BallMovement : MonoBehaviour
     public float maxJoystickDistance;
 
     ChangeCamRotation change;
+
+    Vector3 lastHitPosition;
+
     Transform lastChangeTransform;
 
     public void Awake()
@@ -82,7 +85,7 @@ public class BallMovement : MonoBehaviour
         if(!stoppedMoving && checkSpeed)
         {
             Debug.Log("Checking speed");
-            if (rb.velocity.magnitude <= 0.1f)
+            if (rb.velocity.magnitude <= 0.25f)
             {
                 Debug.Log("Aproxed 0");
                 stoppedMoving = true;
@@ -170,6 +173,7 @@ public class BallMovement : MonoBehaviour
                                 slowed = false;
                             }
 
+                            lastHitPosition = transform.position;
                             rb.AddForce(forceToApply.normalized * magnitudeToApply, ForceMode.Force);
                             stoppedMoving = false;
                             StartCoroutine(TimerForStopCheck());
@@ -202,6 +206,11 @@ public class BallMovement : MonoBehaviour
     public void Slow()
     {
         slowed = true;
+    }
+
+    public void NotSlow()
+    {
+        slowed = false;
     }
 
     public Vector3 GetDirectionValue()
@@ -258,5 +267,12 @@ public class BallMovement : MonoBehaviour
     public bool IsGrabbed()
     {
         return grabbed;
+    }
+
+    public void SendToLastPosition()
+    {
+        transform.position = lastHitPosition;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
