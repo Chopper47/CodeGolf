@@ -15,6 +15,11 @@ public class MenuController : MonoBehaviour
             instance = this;
         }
     }
+
+    /// <summary>
+    /// Gets all objects in the scene
+    /// </summary>
+    /// <returns></returns>
     List<GameObject> GetAllObjectsOnlyInScene()
     {
         List<GameObject> objectsInScene = new List<GameObject>();
@@ -32,6 +37,11 @@ public class MenuController : MonoBehaviour
 
         return objectsInScene;
     }
+
+    /// <summary>
+    /// Gets all buttons in the scene
+    /// </summary>
+    /// <returns></returns>
     public List<GameObject> GetAllButtonsInScene()
     {
         List<GameObject> objects = GetAllObjectsOnlyInScene();
