@@ -9,6 +9,7 @@ TagManager:
   - NameTextbox
   - DialogueTextbox
   - SaveManager
+  - DialogueImage
   layers:
   - Default
   - TransparentFX

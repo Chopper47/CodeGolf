@@ -943,7 +943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &141662935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -959,10 +959,10 @@ RectTransform:
   - {fileID: 1208488088}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 193.20001, y: -397}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141662936
 MonoBehaviour:
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -1613,7 +1613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &298007583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1629,10 +1629,10 @@ RectTransform:
   - {fileID: 528774079}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 465.2, y: -125}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298007584
 MonoBehaviour:
@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -3864,7 +3864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &660375463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3880,10 +3880,10 @@ RectTransform:
   - {fileID: 973493391}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 193.20001, y: -125}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &660375464
 MonoBehaviour:
@@ -3929,7 +3929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -5046,7 +5046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &858242502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5062,10 +5062,10 @@ RectTransform:
   - {fileID: 1640508830}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1009.2, y: -125}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858242503
 MonoBehaviour:
@@ -5111,7 +5111,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -5206,7 +5206,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885705910}
-  - component: {fileID: 885705911}
   m_Layer: 5
   m_Name: LevelsPage
   m_TagString: Untagged
@@ -5237,18 +5236,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -94}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &885705911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885705909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22831e3dd9116574db8cac31a3adaed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &935897855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6504,7 +6491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1065358615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6520,10 +6507,10 @@ RectTransform:
   - {fileID: 1000574879}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 737.2, y: -125}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065358616
 MonoBehaviour:
@@ -6569,7 +6556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -7467,7 +7454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1261960924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7483,10 +7470,10 @@ RectTransform:
   - {fileID: 1383798223}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1009.2, y: -397}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261960925
 MonoBehaviour:
@@ -7532,9 +7519,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274027}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: GoToLevel
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7809,7 +7796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1285516273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7825,10 +7812,10 @@ RectTransform:
   - {fileID: 663574474}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 465.2, y: -397}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285516274
 MonoBehaviour:
@@ -7874,7 +7861,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5
@@ -9904,7 +9891,9 @@ GameObject:
   - component: {fileID: 1562274029}
   - component: {fileID: 1562274028}
   - component: {fileID: 1562274032}
+  - component: {fileID: 1562274035}
   - component: {fileID: 1562274033}
+  - component: {fileID: 1562274034}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: MenuController
@@ -9982,6 +9971,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63181812c9aaca443a9689946043b17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1562274034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22831e3dd9116574db8cac31a3adaed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1562274035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562274027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71dbd20333ba63545ba69e996a231cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelsButtonsArray:
+  - {fileID: 660375462}
+  - {fileID: 298007582}
+  - {fileID: 1065358614}
+  - {fileID: 858242501}
+  - {fileID: 141662934}
+  - {fileID: 1285516272}
+  - {fileID: 1660942644}
+  - {fileID: 1261960923}
 --- !u!1 &1562486043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10985,7 +11007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1660942645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11001,10 +11023,10 @@ RectTransform:
   - {fileID: 1841533550}
   m_Father: {fileID: 441040866}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 737.2, y: -397}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660942646
 MonoBehaviour:
@@ -11050,7 +11072,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 885705911}
+      - m_Target: {fileID: 1562274034}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: GoToLevel
         m_Mode: 5

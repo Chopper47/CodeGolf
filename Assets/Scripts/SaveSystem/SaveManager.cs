@@ -33,6 +33,7 @@ public class SaveManager : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
 
+        Debug.Log("LOADING");
         player.SetGoldAmount(data.goldAmount);
         player.SetGemAmount(data.gemAmount);
 
@@ -41,6 +42,8 @@ public class SaveManager : MonoBehaviour
         player.shieldLevel = data.shieldLevel;
 
         player.levelsCompleted = data.levelsCompleted;
+
+        //player.SetLevelsCompleted();
 
 
         

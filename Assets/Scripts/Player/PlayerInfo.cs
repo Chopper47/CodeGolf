@@ -46,4 +46,26 @@ public class PlayerInfo : MonoBehaviour
         gemAmount = amountToSet;
         gemAmountText.text = gemAmount.ToString();
     }
+
+    public void SetLevelsCompleted()
+    {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        foreach(GameObject button in levelController.levelsButtonsArray)
+        {
+            button.SetActive(false);
+        }
+        if(levelsCompleted > levelController.levelsButtonsArray.Length)
+        {
+            Debug.LogError("LEVELS COMPLETED HIGHER THAN CURRENT AMOUNT OF LEVELS");
+        }
+        else
+        {
+            for (int i = 0; i <= levelsCompleted; i++)
+            {
+                levelController.levelsButtonsArray[i].SetActive(true);
+            }
+
+        }
+
+    }
 }
