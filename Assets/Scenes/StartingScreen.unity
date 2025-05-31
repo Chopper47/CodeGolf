@@ -889,6 +889,8 @@ MonoBehaviour:
   soundList:
   - {fileID: 8300000, guid: 57e17b5c01fc65a4ab7005c29f530250, type: 3}
   - {fileID: 8300000, guid: 57e17b5c01fc65a4ab7005c29f530250, type: 3}
+  musicVolume: 1
+  sfxVolume: 1
 --- !u!4 &1043427289
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     [SerializeField] private Queue<string> sentences;
 
+    //Deactivates the ball when dialogue starts and activates it when it ends
+    public GameObject ball;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -49,6 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        if (ball != null) ball.SetActive(false);
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
         if (nameText != null) nameText.text = dialogue.name;
         sentences.Clear();
@@ -109,6 +113,16 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialoguePanel.SetActive(false);
+        if (ball != null) ball.SetActive(true);
+        
+    }
+
+    /// <summary>
+    /// Called when the dialogue is finished, given the ball so the gameplay starts when the dialogue ends 
+    /// </summary>
+    public void SetObjectActive(GameObject objectToActivate)
+    {
+        objectToActivate.SetActive(true);
     }
 
 }

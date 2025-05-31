@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VolumeController : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class VolumeController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void ChangeVolume()
+    {
+
     }
 }

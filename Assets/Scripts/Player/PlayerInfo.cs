@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+[RequireComponent(typeof(SaveManager))]
 public class PlayerInfo : MonoBehaviour
 {
     public int goldAmount;
