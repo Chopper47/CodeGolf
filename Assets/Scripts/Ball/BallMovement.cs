@@ -171,7 +171,11 @@ public class BallMovement : MonoBehaviour
 
                             if(directionIndicator.GetDispersion() < 0)
                             {
-                                Vector3.RotateTowards(forceToApply, new Vector3(-forceToApply.x, 0f, forceToApply.z), directionIndicator.DispersionAmount()* Math.Abs(directionIndicator.GetDispersion()),0f);
+                                forceToApply = Vector3.RotateTowards(forceToApply, new Vector3(-forceToApply.x, 0f, forceToApply.z), Mathf.Deg2Rad*directionIndicator.DispersionAmount()* Math.Abs(directionIndicator.GetDispersion()),0f);
+                            }
+                            else
+                            {
+                                forceToApply = Vector3.RotateTowards(forceToApply, new Vector3(-forceToApply.z, 0f, forceToApply.x), Mathf.Deg2Rad*directionIndicator.DispersionAmount() * Math.Abs(directionIndicator.GetDispersion()), 0f);
                             }
 
                             if(slowed)
