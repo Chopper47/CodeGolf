@@ -22,6 +22,7 @@ public class HoleGoal : MonoBehaviour
         if (ball)
         {
             ball.End();
+            ball.gameObject.SetActive(false);
         }
     }
 }

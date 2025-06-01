@@ -8,6 +8,8 @@ public class HitCounter : MonoBehaviour
 {
     public TextMeshProUGUI hitsShower;
     public TextMeshProUGUI endShower;
+
+    [SerializeField] GameObject holeCanvas;
     int hits = 0;
 
     // Start is called before the first frame update
@@ -31,5 +33,7 @@ public class HitCounter : MonoBehaviour
     {
         hitsShower.gameObject.SetActive(false);
         endShower.gameObject.SetActive(true);
+
+        holeCanvas.SetActive(true);
     }
 }

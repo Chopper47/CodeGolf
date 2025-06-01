@@ -384,6 +384,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2049679309}
+    - target: {fileID: 4060375943298346282, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5487431}
+    - target: {fileID: 4060375943298346282, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 7068685774074050363, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -489,6 +499,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e, type: 3}
+--- !u!1 &47711080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 702779349627218403, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 47711079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &104845146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2678,7 +2694,7 @@ PrefabInstance:
     - target: {fileID: 2439741150538815275, guid: 2f0582032269fa747ad2498dd3d9bafd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4800017
+      value: 3.2458603
       objectReference: {fileID: 0}
     - target: {fileID: 2439741150538815275, guid: 2f0582032269fa747ad2498dd3d9bafd,
         type: 3}
@@ -3422,6 +3438,11 @@ PrefabInstance:
       propertyPath: hitsShower
       value: 
       objectReference: {fileID: 1679835690}
+    - target: {fileID: 7194720211419033191, guid: 4769367286870644691b0919c9021b15,
+        type: 3}
+      propertyPath: holeCanvas
+      value: 
+      objectReference: {fileID: 47711080}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4845,6 +4866,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8186895012750771888, guid: f2d0dfa75534ec443975b38a2c1488bf,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186895012750771888, guid: f2d0dfa75534ec443975b38a2c1488bf,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -4861,7 +4887,7 @@ PrefabInstance:
     - target: {fileID: 8186895012750771888, guid: f2d0dfa75534ec443975b38a2c1488bf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: GoToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8186895012750771888, guid: f2d0dfa75534ec443975b38a2c1488bf,
         type: 3}
@@ -6039,7 +6065,7 @@ PrefabInstance:
     - target: {fileID: 27058426967510301, guid: e56d8942ad8bb63439508bfd808ee0aa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4800017
+      value: 3.2458603
       objectReference: {fileID: 0}
     - target: {fileID: 27058426967510301, guid: e56d8942ad8bb63439508bfd808ee0aa,
         type: 3}
@@ -6085,6 +6111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850247978818370379, guid: e56d8942ad8bb63439508bfd808ee0aa,
+        type: 3}
+      propertyPath: field of view
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
