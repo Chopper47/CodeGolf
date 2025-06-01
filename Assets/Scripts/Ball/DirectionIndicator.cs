@@ -14,7 +14,7 @@ public class DirectionIndicator : MonoBehaviour
     RectTransform arrow;
     UnityEngine.UI.Image arrowImage;
     float height;
-    float diff;
+    Vector3 originalDir;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,7 +43,6 @@ public class DirectionIndicator : MonoBehaviour
         arrow = directionArrow.GetComponent<RectTransform>();
         arrowImage = directionArrow.GetComponent<UnityEngine.UI.Image>();
         height = -arrow.offsetMax.y;
-        diff = Mathf.Abs(height+height);
         DissapearArrow();
     }
 
@@ -53,6 +52,7 @@ public class DirectionIndicator : MonoBehaviour
         if(movement.AimState())
         {
             Vector3 dir = movement.GetDirectionValue();
+            
 
             if(dir.x < 0)
             {
