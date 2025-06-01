@@ -34,7 +34,7 @@ public class UpgradeStats : MonoBehaviour
         {
             CostToUpgrade(costToUpgradeForce);
             GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().strengthLevel += 1;
-            PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
+            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
             ChangeForceLevelText();
 
         }
