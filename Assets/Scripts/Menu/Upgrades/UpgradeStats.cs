@@ -32,10 +32,14 @@ public class UpgradeStats : MonoBehaviour
     {
         if(playerInfo.goldAmount >= costToUpgradeForce)
         {
-            CostToUpgrade(costToUpgradeForce);
-            GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().strengthLevel += 1;
-            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
-            ChangeForceLevelText();
+
+            if(GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().strengthLevel < 10)
+            {
+                CostToUpgrade(costToUpgradeForce);
+                GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().strengthLevel += 1;
+                ChangeForceLevelText();
+
+            }
 
         }
         SaveManager.instance.SavePlayerData();
@@ -44,10 +48,13 @@ public class UpgradeStats : MonoBehaviour
     {
         if (playerInfo.goldAmount >= costToUpgradeAccuracy)
         {
-            CostToUpgrade(costToUpgradeAccuracy);
-            GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().accuracyLevel += 1;
-            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
-            ChangeAccuracyLevelText();
+            if (GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().accuracyLevel < 10)
+            {
+                CostToUpgrade(costToUpgradeAccuracy);
+                GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().accuracyLevel += 1;
+
+                ChangeAccuracyLevelText();
+            }
 
         }
         SaveManager.instance.SavePlayerData();
@@ -56,10 +63,13 @@ public class UpgradeStats : MonoBehaviour
     {
         if (playerInfo.goldAmount >= costToUpgradeShield)
         {
-            CostToUpgrade(costToUpgradeShield);
-            GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().shieldLevel += 1;
-            //PlayerPrefs.SetFloat("strengthLevel", PlayerPrefs.GetFloat("strengthLevel") + amountToUpgrade);
-            ChangeShieldLevelText();
+            if (GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().shieldLevel < 10)
+            {
+                CostToUpgrade(costToUpgradeShield);
+                GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().shieldLevel += 1;
+                ChangeShieldLevelText();
+
+            }
 
         }
         SaveManager.instance.SavePlayerData();
