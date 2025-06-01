@@ -14,7 +14,7 @@ public class ChangeCamRotation : MonoBehaviour
     }
 
     direction dir;
-
+    float lastDir = 0f;
     GameObject cinemachine;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,29 @@ public class ChangeCamRotation : MonoBehaviour
         }
 
         cinemachine = FindAnyObjectByType<CinemachineVirtualCamera>().gameObject;
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            StartCoroutine(LerpRotationVertical(1f));
+        }
+        
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            StartCoroutine(LerpRotationVerticalInverse(1f));
+        }
+        
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            StartCoroutine(LerpRotationHorizontalInverse(1f));
+        }
+        
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            StartCoroutine(LerpRotationHorizontal(1f));
+        }
     }
 
     public void ChangeCameraRotation(bool vertical)
@@ -61,30 +84,89 @@ public class ChangeCamRotation : MonoBehaviour
     IEnumerator LerpRotationHorizontal(float rotationTime)
     {
         float timer = 0f;
+        float yStarter = lastDir;
 
         while (timer < rotationTime)
         {
-            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(0f, 90f, timer / rotationTime), 0f);
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(yStarter, 90f, timer / rotationTime), 0f);
             timer += Time.deltaTime;
             yield return null;
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
+        lastDir = 90f;
+        yield return null;
+    }
+
+    IEnumerator LerpRotationVerticalInverse(float rotationTime)
+    {
+        float timer = 0f;
+
+        float yStarter = lastDir;
+
+        while (timer < rotationTime)
+        {
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(yStarter, 180f, timer / rotationTime), 0f);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        cinemachine.transform.rotation = Quaternion.Euler(90f, 180f, 0f);
+        lastDir = 180f;
+        yield return null;
+    }
+
+    IEnumerator LerpRotationHorizontalInverse(float rotationTime)
+    {
+        float timer = 0f;
+        float yStarter = lastDir;
+
+        float left;
+        if(lastDir < 90)
+        {
+            left = -90f;
+        }
+        else
+        {
+            left = 270f;
+        }
+
+        while (timer < rotationTime)
+        {
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(yStarter, left, timer / rotationTime), 0f);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        cinemachine.transform.rotation = Quaternion.Euler(90f, 270f, 0f);
+        lastDir = 270f;
         yield return null;
     }
 
     IEnumerator LerpRotationVertical(float rotationTime)
     {
         float timer = 0f;
+        float yStarter = lastDir;
+
+        float front;
+        if(lastDir <= 180)
+        {
+            front = 0f;
+        }
+        else
+        {
+            front = 360f;
+        }
 
         while (timer < rotationTime)
         {
-            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(90f, 0f, timer / rotationTime), 0f);
+            cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(yStarter, front, timer / rotationTime), 0f);
             timer += Time.deltaTime;
             yield return null;
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        lastDir = 0f;
         yield return null;
     }
 }

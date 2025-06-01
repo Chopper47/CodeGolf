@@ -51,7 +51,10 @@ public class DirectionIndicator : MonoBehaviour
         DissapearArrow();
         PlayerInfo info = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
 
-        dispersion = dispersion - desviationScaling * info.accuracyLevel;
+        if (info != null)
+        {
+            dispersion = dispersion - desviationScaling * info.accuracyLevel;
+        }
     }
 
     // Update is called once per frame
@@ -61,14 +64,14 @@ public class DirectionIndicator : MonoBehaviour
         {
             canvas.transform.parent = null;
             canvas.transform.position = transform.position;
+
             Vector3 dir = movement.GetDirectionValue();
 
             if (coroutine == null)
             { 
+                dispersionProportion = 0f;
                 transform.rotation = Quaternion.Euler(0f,0f,0f);
             }
-
-            Debug.DrawRay(transform.position, dir*0.3f, Color.magenta);
 
             if (dir.x < 0)
             {
@@ -81,7 +84,14 @@ public class DirectionIndicator : MonoBehaviour
 
             if(coroutine == null)
             {
-                coroutine = StartCoroutine(Up());
+                if(Random.Range(0,2) == 1)
+                {
+                    coroutine = StartCoroutine(Up());
+                }
+                else
+                {
+                    coroutine = StartCoroutine(Down());
+                }
             }
         }
     }
@@ -99,11 +109,18 @@ public class DirectionIndicator : MonoBehaviour
     {
         float timer = 0f;
         Quaternion start = canvas.transform.localRotation;
+
+        float amp = 2f;
+        if(dispersionProportion == 0f)
+        {
+            amp = 1f;
+        }
+
         while (timer < time)
         {
             canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f, originalDir.z + dispersion), timer / time);
 
-            dispersionProportion = timer / time;
+            dispersionProportion += Time.deltaTime * amp;
 
             timer += Time.deltaTime;
             yield return null;
@@ -118,11 +135,18 @@ public class DirectionIndicator : MonoBehaviour
     {
         float timer = 0f;
         Quaternion start = canvas.transform.localRotation;
+
+        float amp = 2f;
+        if(dispersionProportion == 0f) 
+        {
+            amp = 1f;
+        }
+
         while (timer < time)
         {
             canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f,originalDir.z - dispersion), timer / time);
             
-            dispersionProportion = -(timer / time);
+            dispersionProportion -= Time.deltaTime * amp;
 
             timer += Time.deltaTime;
             yield return null;

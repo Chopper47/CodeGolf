@@ -128,8 +128,58 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 63631865494529481, guid: 90b9425ce5dee384babbe912014c2d19,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4821081039031492346}
+    - targetCorrespondingSourceObject: {fileID: 63631865494529481, guid: 90b9425ce5dee384babbe912014c2d19,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1641408686173321141}
   m_SourcePrefab: {fileID: 100100000, guid: 90b9425ce5dee384babbe912014c2d19, type: 3}
+--- !u!1 &7147639278521876493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 63631865494529481, guid: 90b9425ce5dee384babbe912014c2d19,
+    type: 3}
+  m_PrefabInstance: {fileID: 7193256676179273156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4821081039031492346
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147639278521876493}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.077005915
+  m_Height: 0.23
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.06642922, z: 0}
+--- !u!114 &1641408686173321141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147639278521876493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8852b8928bb457c4f9ba5f0630ff1430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 40
 --- !u!4 &7230860878971798063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90b9425ce5dee384babbe912014c2d19,

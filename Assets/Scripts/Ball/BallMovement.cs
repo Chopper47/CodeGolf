@@ -75,7 +75,14 @@ public class BallMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         PlayerInfo info = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
-        strengthAdded = strengthScaling * info.strengthLevel; //*level
+        if (info != null)
+        {
+            strengthAdded = strengthScaling * info.strengthLevel; //*level
+        }
+        else
+        {
+            strengthAdded = strengthScaling;
+        }
     }
 
     private void Update()
