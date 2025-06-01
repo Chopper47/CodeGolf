@@ -16,11 +16,11 @@ public class DirectionIndicator : MonoBehaviour
 
     [Header(" --- Rotation --- ")]
     public float time = 5f;
-    public float disppersion = 40f;
+    public float dispersion = 40f;
     Vector3 originalDir;
 
     Coroutine coroutine;
-
+    float dispersionProportion = 0f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,8 +47,6 @@ public class DirectionIndicator : MonoBehaviour
         canvasInitialState = canvas.transform.rotation;
         arrow = directionArrow.GetComponent<RectTransform>();
         arrowImage = directionArrow.GetComponent<UnityEngine.UI.Image>();
-        Debug.Log(canvas.transform.localRotation);
-        Debug.Log(canvas.transform.rotation);
         DissapearArrow();
     }
 
@@ -64,13 +62,15 @@ public class DirectionIndicator : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f,0f,0f);
             }
 
+            Debug.DrawRay(transform.position, dir*0.3f, Color.magenta);
+
             if (dir.x < 0)
             {
-                originalDir = Quaternion.Euler(90f, 0f, Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)) * canvas.transform.forward; 
+                originalDir = new Vector3(90f, 0f, Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)); 
             }
             else
             {
-                originalDir = Quaternion.Euler(90f, 0f, -Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)) * canvas.transform.forward;
+                originalDir = new Vector3(90f, 0f, -Vector3.Angle(movement.GetDirectionValue(), Vector3.forward));
             }
 
             if(coroutine == null)
@@ -82,7 +82,10 @@ public class DirectionIndicator : MonoBehaviour
 
     public void StopCoroutineDispersion()
     {
-        StopCoroutine(coroutine);
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
         coroutine = null;
     }
 
@@ -92,10 +95,16 @@ public class DirectionIndicator : MonoBehaviour
         Quaternion start = canvas.transform.localRotation;
         while (timer < time)
         {
-            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f, originalDir.z + disppersion), timer / time);
+            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f, originalDir.z + dispersion), timer / time);
+
+            dispersionProportion = timer / time;
+
             timer += Time.deltaTime;
             yield return null;
         }
+
+        dispersionProportion = 1f;
+
         coroutine = StartCoroutine(Up());
     }
 
@@ -105,11 +114,27 @@ public class DirectionIndicator : MonoBehaviour
         Quaternion start = canvas.transform.localRotation;
         while (timer < time)
         {
-            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f,originalDir.z - disppersion), timer / time);
+            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f,originalDir.z - dispersion), timer / time);
+            
+            dispersionProportion = -(timer / time);
+
             timer += Time.deltaTime;
             yield return null;
         }
+
+        dispersionProportion = -1f;
+
         coroutine = StartCoroutine(Down());
+    }
+
+    public float GetDispersion()
+    {
+        return dispersionProportion;
+    }
+
+    public float DispersionAmount()
+    {
+        return dispersion;
     }
 
     public void AppearArrow()
