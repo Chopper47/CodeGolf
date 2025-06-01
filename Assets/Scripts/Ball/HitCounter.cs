@@ -34,6 +34,7 @@ public class HitCounter : MonoBehaviour
         hitsShower.gameObject.SetActive(false);
         endShower.gameObject.SetActive(true);
 
+        holeCanvas.GetComponentInChildren<TextMeshProUGUI>().text = hits.ToString();
         holeCanvas.SetActive(true);
     }
 }
