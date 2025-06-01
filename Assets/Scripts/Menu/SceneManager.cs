@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
     public GameObject canvasObject;
-    public float fadeDuration = 2f;
+    public float fadeDuration = 0.5f;
 
     private void Awake()
     {
