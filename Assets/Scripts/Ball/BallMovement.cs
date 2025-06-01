@@ -74,7 +74,8 @@ public class BallMovement : MonoBehaviour
         }
         rb = GetComponent<Rigidbody>();
 
-        strengthAdded = strengthScaling * PlayerPrefs.GetFloat("strengthLevel"); //*level
+        PlayerInfo info = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
+        strengthAdded = strengthScaling * info.strengthLevel; //*level
     }
 
     private void Update()
@@ -85,7 +86,7 @@ public class BallMovement : MonoBehaviour
         if(!stoppedMoving && checkSpeed)
         {
             Debug.Log("Checking speed");
-            if (rb.velocity.magnitude <= 0.25f)
+            if (rb.velocity.magnitude <= 0.18f)
             {
                 Debug.Log("Aproxed 0");
                 stoppedMoving = true;

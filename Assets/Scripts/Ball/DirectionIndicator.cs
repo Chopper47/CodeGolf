@@ -17,6 +17,7 @@ public class DirectionIndicator : MonoBehaviour
     [Header(" --- Rotation --- ")]
     public float time = 5f;
     public float dispersion = 40f;
+    public float desviationScaling = 5f;
     Vector3 originalDir;
 
     Coroutine coroutine;
@@ -48,6 +49,9 @@ public class DirectionIndicator : MonoBehaviour
         arrow = directionArrow.GetComponent<RectTransform>();
         arrowImage = directionArrow.GetComponent<UnityEngine.UI.Image>();
         DissapearArrow();
+        PlayerInfo info = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
+
+        dispersion = dispersion - desviationScaling * info.accuracyLevel;
     }
 
     // Update is called once per frame
