@@ -28,7 +28,6 @@ public class ReflectionForce : MonoBehaviour
     public void BounceOffWall(Vector3 collisionPoint)
     {
         //Collision is the contact point
-        Debug.Log("Bounced");
         float speed = rb.velocity.magnitude;
 
         Vector3 dir = collisionPoint - transform.position;
