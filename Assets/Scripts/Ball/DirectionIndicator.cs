@@ -59,6 +59,8 @@ public class DirectionIndicator : MonoBehaviour
     {
         if(movement.AimState())
         {
+            canvas.transform.parent = null;
+            canvas.transform.position = transform.position;
             Vector3 dir = movement.GetDirectionValue();
 
             if (coroutine == null)
@@ -129,6 +131,11 @@ public class DirectionIndicator : MonoBehaviour
         dispersionProportion = -1f;
 
         coroutine = StartCoroutine(Down());
+    }
+
+    public void RecallCanvas()
+    {
+        canvas.transform.SetParent(this.transform);
     }
 
     public float GetDispersion()
