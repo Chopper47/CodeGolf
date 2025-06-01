@@ -263,6 +263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionArrow: {fileID: 4040974343230170132}
   canvas: {fileID: 7003363074519123283}
+  time: 1
+  dispersion: 40
+  desviationScaling: 4
 --- !u!114 &7194720211419033191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsShower: {fileID: 0}
   endShower: {fileID: 0}
+  holeCanvas: {fileID: 0}
 --- !u!1 &7003363074519123283
 GameObject:
   m_ObjectHideFlags: 0
