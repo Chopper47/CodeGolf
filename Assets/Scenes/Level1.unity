@@ -213,74 +213,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4742964}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &89812127
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 135.04782
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1068.6597
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 32.802246
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
-        type: 3}
-      propertyPath: m_Name
-      value: DialogueTrigger
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43e97db1884ef934f801976a8c5a4144, type: 3}
 --- !u!1001 &92413069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3758,6 +3690,106 @@ Transform:
   - {fileID: 229463131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2048775120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: 'Welcome to Code: Golf.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: This simulation has been created with the objective of testing my generation
+        capabilities against the intelect of a human.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Though, of course, there's no way a mere human would be able to defeat
+        one of my creations, so it seems rather pointless.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Anyway, let's finish this farce as soon as posible
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43e97db1884ef934f801976a8c5a4144, type: 3}
 --- !u!1 &2102426546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,5 +3979,5 @@ SceneRoots:
   - {fileID: 1624746635}
   - {fileID: 259902502}
   - {fileID: 8577356649068510756}
-  - {fileID: 89812127}
   - {fileID: 1938375365}
+  - {fileID: 2048775120}

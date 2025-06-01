@@ -149,6 +149,7 @@ public class DialogueManager : MonoBehaviour
         if (dialogueImage == null) dialogueImage = GameObject.FindGameObjectWithTag("DialogueImage");
         dialogueImage.SetActive(false);
     }
+
     /// <summary>
     /// Called when the dialogue is finished, given the ball so the gameplay starts when the dialogue ends 
     /// </summary>

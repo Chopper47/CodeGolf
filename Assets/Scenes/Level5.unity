@@ -238,6 +238,105 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 36215896}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &43025567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488976688733144348, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: I refuse to believe an inferior being could ever defeat my greatness!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: From now on, your playtime is over. I will put all my computing power
+        into defeating you and your meager skills.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Anyway, let's finish this farce as soon as posible
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_Name
+      value: DialogueTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43e97db1884ef934f801976a8c5a4144, type: 3}
 --- !u!1001 &45897539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5827,3 +5926,4 @@ SceneRoots:
   - {fileID: 1135984944}
   - {fileID: 1303820762}
   - {fileID: 951226660}
+  - {fileID: 43025567}
