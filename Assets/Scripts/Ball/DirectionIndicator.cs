@@ -13,8 +13,13 @@ public class DirectionIndicator : MonoBehaviour
     Quaternion canvasInitialState;
     RectTransform arrow;
     UnityEngine.UI.Image arrowImage;
-    float height;
+
+    [Header(" --- Rotation --- ")]
+    public float time = 5f;
+    public float disppersion = 40f;
     Vector3 originalDir;
+
+    Coroutine coroutine;
 
     // Start is called before the first frame update
     void Awake()
@@ -42,7 +47,8 @@ public class DirectionIndicator : MonoBehaviour
         canvasInitialState = canvas.transform.rotation;
         arrow = directionArrow.GetComponent<RectTransform>();
         arrowImage = directionArrow.GetComponent<UnityEngine.UI.Image>();
-        height = -arrow.offsetMax.y;
+        Debug.Log(canvas.transform.localRotation);
+        Debug.Log(canvas.transform.rotation);
         DissapearArrow();
     }
 
@@ -52,18 +58,58 @@ public class DirectionIndicator : MonoBehaviour
         if(movement.AimState())
         {
             Vector3 dir = movement.GetDirectionValue();
-            
 
-            if(dir.x < 0)
+            if (coroutine == null)
+            { 
+                transform.rotation = Quaternion.Euler(0f,0f,0f);
+            }
+
+            if (dir.x < 0)
             {
-                canvas.transform.rotation = Quaternion.Euler(90f, 0f, Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)); 
+                originalDir = Quaternion.Euler(90f, 0f, Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)) * canvas.transform.forward; 
             }
             else
             {
-                canvas.transform.rotation = Quaternion.Euler(90f, 0f, -Vector3.Angle(movement.GetDirectionValue(), Vector3.forward));
+                originalDir = Quaternion.Euler(90f, 0f, -Vector3.Angle(movement.GetDirectionValue(), Vector3.forward)) * canvas.transform.forward;
             }
 
+            if(coroutine == null)
+            {
+                coroutine = StartCoroutine(Up());
+            }
         }
+    }
+
+    public void StopCoroutineDispersion()
+    {
+        StopCoroutine(coroutine);
+        coroutine = null;
+    }
+
+    IEnumerator Down()            //sumar
+    {
+        float timer = 0f;
+        Quaternion start = canvas.transform.localRotation;
+        while (timer < time)
+        {
+            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f, originalDir.z + disppersion), timer / time);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        coroutine = StartCoroutine(Up());
+    }
+
+    IEnumerator Up()            //restar
+    {
+        float timer = 0f;
+        Quaternion start = canvas.transform.localRotation;
+        while (timer < time)
+        {
+            canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f,originalDir.z - disppersion), timer / time);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        coroutine = StartCoroutine(Down());
     }
 
     public void AppearArrow()

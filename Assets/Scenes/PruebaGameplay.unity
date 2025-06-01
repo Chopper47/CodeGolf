@@ -1614,10 +1614,20 @@ PrefabInstance:
       propertyPath: joystickBackground
       value: 
       objectReference: {fileID: 1618959901}
+    - target: {fileID: 4024454983587258959, guid: 4769367286870644691b0919c9021b15,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5334731556642113389, guid: 4769367286870644691b0919c9021b15,
         type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851206063845888814, guid: 4769367286870644691b0919c9021b15,
+        type: 3}
+      propertyPath: time
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595393121453536415, guid: 4769367286870644691b0919c9021b15,
         type: 3}

@@ -154,6 +154,7 @@ public class BallMovement : MonoBehaviour
                             break;
                         case TouchPhase.Ended:
                             aiming = false;
+                            directionIndicator.StopCoroutineDispersion();
                             directionIndicator.DissapearArrow();
 
                             if(verticalInput)
