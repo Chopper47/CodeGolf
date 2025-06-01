@@ -54,8 +54,8 @@ Material:
     - _AlturaMaxima: 0.12
     - _AlturaOlas: 0.1
     - _CantidadOlas: 6
-    - _Densidad: 10
-    - _FresnelPower: 4
+    - _Densidad: 16
+    - _FresnelPower: 19
     - _Glow: 0
     - _Grosor: 3
     - _MovimientoDesorden: 1
@@ -64,8 +64,8 @@ Material:
     - _VelocidadDesplazamiento: 0.02
     - _VelocidadOlas: 0.1
     m_Colors:
-    - _ColorFondo: {r: 0, g: 0.7892151, b: 1, a: 0}
-    - _ColorParticulas: {r: 0, g: 0.7045363, b: 0.8490566, a: 0}
+    - _ColorFondo: {r: 0.5424528, g: 0.89971566, b: 1, a: 0}
+    - _ColorParticulas: {r: 0.087086126, g: 0.7393004, b: 0.9716981, a: 0}
     - _Direccion: {r: 0, g: 1, b: 0, a: 0}
     - _Estiramiento: {r: 1, g: 1.25, b: 0, a: 0}
     - _FresnelColor: {r: 0.6273585, g: 0.97449565, b: 1, a: 0}
