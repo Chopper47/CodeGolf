@@ -10,6 +10,10 @@ TagManager:
   - DialogueTextbox
   - SaveManager
   - DialogueImage
+  - 1Star
+  - 2Star
+  - 3Star
+  - GoldText
   layers:
   - Default
   - TransparentFX

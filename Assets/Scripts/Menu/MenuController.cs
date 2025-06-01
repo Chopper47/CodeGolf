@@ -16,6 +16,11 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        SaveManager.instance.LoadPlayerData();
+    }
+
     /// <summary>
     /// Gets all objects in the scene
     /// </summary>

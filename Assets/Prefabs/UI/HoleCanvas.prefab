@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 6360139187797474269}
   m_Layer: 5
   m_Name: FillStarLeftMid
-  m_TagString: Untagged
+  m_TagString: 2Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 4711578765492023567}
   m_Layer: 5
   m_Name: FillStarLeft
-  m_TagString: Untagged
+  m_TagString: 1Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 5271183415954787532}
   m_Layer: 5
   m_Name: FillStarLeftRight
-  m_TagString: Untagged
+  m_TagString: 3Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

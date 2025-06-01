@@ -35,7 +35,7 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("LOADING");
         player.SetGoldAmount(data.goldAmount);
-        player.SetGemAmount(data.gemAmount);
+        //player.SetGemAmount(data.gemAmount);
 
         player.strengthLevel = data.strengthLevel;
         player.accuracyLevel = data.accuracyLevel;

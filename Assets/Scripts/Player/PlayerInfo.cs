@@ -27,26 +27,26 @@ public class PlayerInfo : MonoBehaviour
     public void ChangeGoldAmount(int amountToReduce)
     {
         goldAmount -= amountToReduce;
-        goldAmountText.text = goldAmount.ToString();
+        GameObject.FindGameObjectWithTag("GoldText").GetComponent<TextMeshProUGUI>().text = goldAmount.ToString();
     }
     
     public void SetGoldAmount(int amountToSet)
     {
         goldAmount = amountToSet;
-        goldAmountText.text = goldAmount.ToString();
+        GameObject.FindGameObjectWithTag("GoldText").GetComponent<TextMeshProUGUI>().text = goldAmount.ToString();
     }
 
-    public void ChangeGemAmount(int amountToReduce)
-    {
-        gemAmount -= amountToReduce;
-        gemAmountText.text = gemAmount.ToString();
-    }
+    //public void ChangeGemAmount(int amountToReduce)
+    //{
+    //    gemAmount -= amountToReduce;
+    //    gemAmountText.text = gemAmount.ToString();
+    //}
 
-    public void SetGemAmount(int amountToSet)
-    {
-        gemAmount = amountToSet;
-        gemAmountText.text = gemAmount.ToString();
-    }
+    //public void SetGemAmount(int amountToSet)
+    //{
+    //    gemAmount = amountToSet;
+    //    gemAmountText.text = gemAmount.ToString();
+    //}
 
     public void SetLevelsCompleted()
     {
