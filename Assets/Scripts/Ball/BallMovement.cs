@@ -120,6 +120,7 @@ public class BallMovement : MonoBehaviour
                             dir = (new Vector3(t.position.x, t.position.y, 0f) - startingPos);
                             distanceProportion = 0f;
                             directionIndicator.AppearArrow();
+                            directionIndicator.SetFill(distanceProportion);
                             break;
                         case TouchPhase.Moved:
                             if(!grabbed)
@@ -167,6 +168,15 @@ public class BallMovement : MonoBehaviour
                             }
 
                             float magnitudeToApply = (inputForce + strengthAdded) * distanceProportion;
+
+                            if(directionIndicator.GetDispersion() < 0)
+                            {
+                                forceToApply = Vector3.RotateTowards(forceToApply, new Vector3(-forceToApply.x, 0f, forceToApply.z), Mathf.Deg2Rad*directionIndicator.DispersionAmount()* Math.Abs(directionIndicator.GetDispersion()),0f);
+                            }
+                            else
+                            {
+                                forceToApply = Vector3.RotateTowards(forceToApply, new Vector3(-forceToApply.z, 0f, forceToApply.x), Mathf.Deg2Rad*directionIndicator.DispersionAmount() * Math.Abs(directionIndicator.GetDispersion()), 0f);
+                            }
 
                             if(slowed)
                             {
