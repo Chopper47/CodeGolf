@@ -7582,6 +7582,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Dialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Dialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Dialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue testDialogue
+        testDialogue testDialogue testDialogue testDialogue testDialogue test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622463708010586407, guid: 43e97db1884ef934f801976a8c5a4144,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: Dialogue test
+      objectReference: {fileID: 0}
     - target: {fileID: 4481219515816597722, guid: 43e97db1884ef934f801976a8c5a4144,
         type: 3}
       propertyPath: m_Name

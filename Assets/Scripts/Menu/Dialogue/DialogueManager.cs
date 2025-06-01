@@ -32,30 +32,13 @@ public class DialogueManager : MonoBehaviour
             instance = this;
         }
 
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
 
         sentences = new Queue<string>();
-
+        SetUpUI();
     }
 
-    /// <summary>
-    /// Gets all necessary visual parts and adds the onclick event to the dialogue panel
-    /// </summary>
-    void Start()
-    {
-
-        if (dialoguePanel == null) dialoguePanel = GameObject.FindGameObjectWithTag("DialogueBox");
-        AddEventToDialoguePanel();
-
-        if (nameText == null) nameText = GameObject.FindGameObjectWithTag("NameTextbox").GetComponent<TextMeshProUGUI>();
-        if (dialogueText == null) dialogueText = GameObject.FindGameObjectWithTag("DialogueTextbox").GetComponent<TextMeshProUGUI>();
-        dialoguePanel.SetActive(false);
-
-        if (dialogueImage == null) dialogueImage = GameObject.FindGameObjectWithTag("DialogueImage");
-        dialogueImage.SetActive(false);
-
-
-    }
+    
 
     /// <summary>
     /// Activates all necessary visual parts and starts trhe dialogue. 
@@ -151,6 +134,21 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Gets all necesary parts of the UI, activates them and adds the onclick event to the panel
+    /// </summary>
+    void SetUpUI()
+    {
+        if (dialoguePanel == null) dialoguePanel = GameObject.FindGameObjectWithTag("DialogueBox");
+        AddEventToDialoguePanel();
+
+        if (nameText == null) nameText = GameObject.FindGameObjectWithTag("NameTextbox").GetComponent<TextMeshProUGUI>();
+        if (dialogueText == null) dialogueText = GameObject.FindGameObjectWithTag("DialogueTextbox").GetComponent<TextMeshProUGUI>();
+        dialoguePanel.SetActive(false);
+
+        if (dialogueImage == null) dialogueImage = GameObject.FindGameObjectWithTag("DialogueImage");
+        dialogueImage.SetActive(false);
+    }
     /// <summary>
     /// Called when the dialogue is finished, given the ball so the gameplay starts when the dialogue ends 
     /// </summary>
