@@ -12,6 +12,8 @@ public class RampForceProyection : MonoBehaviour
 
     Rigidbody rb;
 
+    public LayerMask ramp;
+
     Vector3 touchPoint;
 
     public void Start()
@@ -24,7 +26,7 @@ public class RampForceProyection : MonoBehaviour
         if(checkForRamp && rampTouched) 
         {
             Debug.DrawRay(transform.position, (touchPoint - transform.position).normalized, Color.magenta);
-            if(Physics.Raycast(transform.position,(touchPoint - transform.position).normalized,out RaycastHit hit,0.1f,8))
+            if(Physics.Raycast(transform.position,(touchPoint - transform.position).normalized,out RaycastHit hit,0.5f,ramp))
             { 
                 foundRamp = true;
                 Debug.Log("Fixing ");

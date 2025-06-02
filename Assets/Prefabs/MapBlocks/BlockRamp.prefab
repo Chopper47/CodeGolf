@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3030476517442364354}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.6, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,6 +104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RampBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579815516120725900, guid: 5582c0415104b594ea54275956021a47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8773501176841844326, guid: 5582c0415104b594ea54275956021a47,
         type: 3}

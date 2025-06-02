@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2411575109979042212}
   - component: {fileID: 5851206063845888814}
   - component: {fileID: 7194720211419033191}
+  - component: {fileID: 2831245147562767051}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -281,6 +282,21 @@ MonoBehaviour:
   hitsShower: {fileID: 0}
   endShower: {fileID: 0}
   holeCanvas: {fileID: 0}
+--- !u!114 &2831245147562767051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5334731556642113389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab815567adeb5d642b30d6493b6cfe3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ramp:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &7003363074519123283
 GameObject:
   m_ObjectHideFlags: 0
