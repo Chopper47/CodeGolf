@@ -8,7 +8,6 @@ public class SpeedBoost : MonoBehaviour
     public GameObject directionPoint;
     public float speed;
 
-
     public float amplifier = 1f;
 
     public float cooldown = 3f;
@@ -21,16 +20,16 @@ public class SpeedBoost : MonoBehaviour
         dirVector = directionPoint.transform.position - transform.position;
 
         dirVector.Normalize();
-        dirVector *= speed;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        BallMovement ball = other.GetComponent<BallMovement>();
+        RampForceProyection ball = other.GetComponent<RampForceProyection>();
 
         if (ball != null && canBoost) 
         { 
-            ball.GetComponent<Rigidbody>().velocity += dirVector*amplifier;
+            ball.GetComponent<Rigidbody>().AddForce(dirVector*amplifier*speed, ForceMode.Impulse);
+            ball.StartCheck();
             canBoost = false;
             StartCoroutine(Cooldown());
         }
@@ -41,5 +40,4 @@ public class SpeedBoost : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canBoost = true;
     }
-
 }
