@@ -23,8 +23,8 @@ public class ChangeCamRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float y = transform.eulerAngles.y / 90f;
-        switch(y)
+        float y = Mathf.RoundToInt(transform.eulerAngles.y / 90f);
+        switch (y)
         {
             case 0f:
                 if(invertVerticalAxis)
@@ -108,12 +108,13 @@ public class ChangeCamRotation : MonoBehaviour
                 break;
         }
 
+        Debug.Log(transform.parent.name + ":"+dir + " | " + y);
+
         cinemachine = FindAnyObjectByType<CinemachineVirtualCamera>().gameObject;
     }
 
     public void ChangeCameraRotation(int currentDir)
     {
-        Debug.Log("Rotate");
         switch (dir)
         {
             case direction.right:StartCoroutine(LerpRotationHorizontal(1f));
@@ -202,7 +203,6 @@ public class ChangeCamRotation : MonoBehaviour
     {
         float timer = 0f;
         float yStarter = cinemachine.transform.rotation.eulerAngles.y;
-        Debug.Log(yStarter);
         float front;
         if(yStarter <= 180)
         {

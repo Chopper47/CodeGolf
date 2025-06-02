@@ -62,7 +62,7 @@ public class DirectionIndicator : MonoBehaviour
     {
         if(movement.AimState())
         {
-            canvas.transform.parent = null;
+            canvas.transform.SetParent(null);
             canvas.transform.position = transform.position;
 
             Vector3 dir = movement.GetDirectionValue();

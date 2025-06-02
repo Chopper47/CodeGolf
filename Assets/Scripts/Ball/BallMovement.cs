@@ -93,17 +93,14 @@ public class BallMovement : MonoBehaviour
         
         if(!stoppedMoving && checkSpeed)
         {
-            Debug.Log("Checking speed");
             if (rb.velocity.magnitude <= 0.18f)
             {
-                Debug.Log("Aproxed 0");
                 stoppedMoving = true;
             }
         }
 
         if(stoppedMoving && checkSpeed)
         {
-            Debug.Log("stopped");
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             checkSpeed = false;
@@ -280,7 +277,6 @@ public class BallMovement : MonoBehaviour
     IEnumerator TimerForStopCheck()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("Check set true");
         checkSpeed = true;
     }
 
