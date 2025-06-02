@@ -374,16 +374,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockStart
       objectReference: {fileID: 0}
-    - target: {fileID: 7816646816438225613, guid: 5cd0449bec8957246be1a93c221bcdc9,
-        type: 3}
-      propertyPath: invertVerticalAxis
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7816646816438225613, guid: 5cd0449bec8957246be1a93c221bcdc9,
-        type: 3}
-      propertyPath: invertHorizontalAxis
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9159208791540915977, guid: 5cd0449bec8957246be1a93c221bcdc9,
         type: 3}
       propertyPath: m_LocalPosition.x
