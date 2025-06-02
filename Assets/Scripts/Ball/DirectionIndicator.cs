@@ -110,17 +110,20 @@ public class DirectionIndicator : MonoBehaviour
         float timer = 0f;
         Quaternion start = canvas.transform.localRotation;
 
-        float amp = 2f;
-        if(dispersionProportion == 0f)
-        {
-            amp = 1f;
-        }
+        float starterDispersion = dispersionProportion;
 
         while (timer < time)
         {
             canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f, originalDir.z + dispersion), timer / time);
 
-            dispersionProportion += Time.deltaTime * amp;
+            if (starterDispersion == 0f)
+            {
+                dispersionProportion = Mathf.Lerp(0f, 1f, timer / time);
+            }
+            else
+            {
+                dispersionProportion = Mathf.Lerp(-1f, 1f, timer / time);
+            }
 
             timer += Time.deltaTime;
             yield return null;
@@ -136,17 +139,20 @@ public class DirectionIndicator : MonoBehaviour
         float timer = 0f;
         Quaternion start = canvas.transform.localRotation;
 
-        float amp = 2f;
-        if(dispersionProportion == 0f) 
-        {
-            amp = 1f;
-        }
+        float starterDispersion = dispersionProportion;
 
         while (timer < time)
         {
             canvas.transform.localRotation = Quaternion.Lerp(start, Quaternion.Euler(90f, 0f,originalDir.z - dispersion), timer / time);
-            
-            dispersionProportion -= Time.deltaTime * amp;
+
+            if (starterDispersion == 0f)
+            {
+                dispersionProportion = Mathf.Lerp(0f,-1f, timer/time);
+            }
+            else
+            {
+                dispersionProportion = Mathf.Lerp(1f, -1f, timer / time); 
+            }
 
             timer += Time.deltaTime;
             yield return null;
