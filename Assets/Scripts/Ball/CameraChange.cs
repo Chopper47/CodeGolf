@@ -9,83 +9,144 @@ public class ChangeCamRotation : MonoBehaviour
 {
     enum direction
     {
-        horizontal,
-        vertical
+        right,
+        front,
+        back,
+        left
     }
 
     direction dir;
-    float lastDir = 0f;
     GameObject cinemachine;
+
+    public bool invertVerticalAxis;
+    public bool invertHorizontalAxis;
     // Start is called before the first frame update
     void Start()
     {
-        float y = transform.rotation.y / 90f;
-
-        if (Mathf.Approximately(y % 2, 0))
+        float y = transform.eulerAngles.y / 90f;
+        switch(y)
         {
-            dir = direction.vertical;
-        }
-        else
-        {
-            dir = direction.horizontal;
+            case 0f:
+                if(invertVerticalAxis)
+                {
+                    dir = direction.back;
+                }
+                else
+                {
+                    dir = direction.front;
+                }
+                break;
+            case 1f:
+                if(invertHorizontalAxis)
+                { 
+                    dir = direction.left;
+                }
+                else
+                {
+                    dir = direction.right;
+                }
+                break;
+            case 2f:
+                if (invertVerticalAxis)
+                {
+                    dir = direction.front;
+                }
+                else
+                {
+                    dir = direction.back;
+                }
+                break;
+            case 3f:
+                if (invertHorizontalAxis)
+                {
+                    dir = direction.right;
+                }
+                else
+                {
+                    dir = direction.left;
+                }
+                break;
+            case 4f:
+                if (invertVerticalAxis)
+                {
+                    dir = direction.back;
+                }
+                else
+                {
+                    dir = direction.front;
+                }
+                break;
+            case -1f:
+                if (invertHorizontalAxis)
+                {
+                    dir = direction.right;
+                }
+                else
+                {
+                    dir = direction.left;
+                }
+                break;
+            case -2f:
+                if (invertVerticalAxis)
+                {
+                    dir = direction.front;
+                }
+                else
+                {
+                    dir = direction.back;
+                }
+                break;
+            case -3f:
+                if (invertHorizontalAxis)
+                {
+                    dir = direction.left;
+                }
+                else
+                {
+                    dir = direction.right;
+                }
+                break;
         }
 
         cinemachine = FindAnyObjectByType<CinemachineVirtualCamera>().gameObject;
     }
 
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            StartCoroutine(LerpRotationVertical(1f));
-        }
-        
-        if(Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            StartCoroutine(LerpRotationVerticalInverse(1f));
-        }
-        
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            StartCoroutine(LerpRotationHorizontalInverse(1f));
-        }
-        
-        if(Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            StartCoroutine(LerpRotationHorizontal(1f));
-        }
-    }
-
-    public void ChangeCameraRotation(bool vertical)
+    public void ChangeCameraRotation(int currentDir)
     {
         Debug.Log("Rotate");
         switch (dir)
         {
-            case direction.horizontal:
-                if(vertical)
-                {
-                    StartCoroutine(LerpRotationHorizontal(1f));
-                }
+            case direction.right:StartCoroutine(LerpRotationHorizontal(1f));
                 break;
-            case direction.vertical:
-                if(!vertical)
-                {
-                    StartCoroutine(LerpRotationVertical(1f));
-                }
+            case direction.front:StartCoroutine(LerpRotationVertical(1f));
+                break;
+            case direction.back:StartCoroutine(LerpRotationVerticalInverse(1f));
+                break;
+            case direction.left:StartCoroutine(LerpRotationHorizontalInverse(1f));
                 break;
         }
     }
 
-    public bool VerticalCamera()
+    public int VerticalCamera()
     {
-        return dir == direction.vertical;
+        switch(dir)
+        {
+            case direction.right:
+                return 1;
+            case direction.front:
+                return 0;
+            case direction.back:
+                return 2;
+            case direction.left:
+                return 3;
+            default: return 0;
+        }
     }
 
     IEnumerator LerpRotationHorizontal(float rotationTime)
     {
         float timer = 0f;
-        float yStarter = lastDir;
-
+        float yStarter = cinemachine.transform.rotation.eulerAngles.y;
         while (timer < rotationTime)
         {
             cinemachine.transform.rotation = Quaternion.Euler(90f, Mathf.Lerp(yStarter, 90f, timer / rotationTime), 0f);
@@ -94,15 +155,13 @@ public class ChangeCamRotation : MonoBehaviour
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 90f, 0f);
-        lastDir = 90f;
-        yield return null;
     }
 
     IEnumerator LerpRotationVerticalInverse(float rotationTime)
     {
         float timer = 0f;
 
-        float yStarter = lastDir;
+        float yStarter = cinemachine.transform.rotation.eulerAngles.y;
 
         while (timer < rotationTime)
         {
@@ -112,17 +171,15 @@ public class ChangeCamRotation : MonoBehaviour
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 180f, 0f);
-        lastDir = 180f;
-        yield return null;
     }
 
     IEnumerator LerpRotationHorizontalInverse(float rotationTime)
     {
         float timer = 0f;
-        float yStarter = lastDir;
+        float yStarter = cinemachine.transform.rotation.eulerAngles.y;
 
         float left;
-        if(lastDir < 90)
+        if(yStarter < 90)
         {
             left = -90f;
         }
@@ -139,17 +196,15 @@ public class ChangeCamRotation : MonoBehaviour
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 270f, 0f);
-        lastDir = 270f;
-        yield return null;
     }
 
     IEnumerator LerpRotationVertical(float rotationTime)
     {
         float timer = 0f;
-        float yStarter = lastDir;
-
+        float yStarter = cinemachine.transform.rotation.eulerAngles.y;
+        Debug.Log(yStarter);
         float front;
-        if(lastDir <= 180)
+        if(yStarter <= 180)
         {
             front = 0f;
         }
@@ -166,8 +221,6 @@ public class ChangeCamRotation : MonoBehaviour
         }
 
         cinemachine.transform.rotation = Quaternion.Euler(90f, 0f, 0f);
-        lastDir = 0f;
-        yield return null;
     }
 }
 

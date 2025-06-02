@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
@@ -30,7 +31,7 @@ public class BallMovement : MonoBehaviour
     bool stoppedMoving = true;
     bool checkSpeed = false;
 
-    bool verticalInput = true;
+    int verticalInput = 0;
 
     bool aiming = false;
 
@@ -166,14 +167,30 @@ public class BallMovement : MonoBehaviour
                             directionIndicator.StopCoroutineDispersion();
                             directionIndicator.DissapearArrow();
 
-                            if(verticalInput)
+                            switch(verticalInput)
                             {
-                                forceToApply = -new Vector3(dir.x, 0f, dir.y);
+                                case 0:
+                                    forceToApply = new Vector3(-dir.x, 0f, -dir.y);
+                                    break;
+                                case 1:
+                                    forceToApply = new Vector3(-dir.y, 0f, dir.x);
+                                    break;
+                                case 2:
+                                    forceToApply = new Vector3(dir.x, 0f, dir.y);
+                                    break;
+                                case 3:
+                                    forceToApply = new Vector3(dir.y, 0f,-dir.x);
+                                    break;
                             }
-                            else
-                            {
-                                forceToApply = new Vector3(-dir.y, 0f, dir.x);
-                            }
+
+                            //if(verticalInput == 0)
+                            //{
+                            //    forceToApply = -new Vector3(dir.x, 0f, dir.y);
+                            //}
+                            //else
+                            //{
+                            //    forceToApply = new Vector3(-dir.y, 0f, dir.x);
+                            //}
 
                             float magnitudeToApply = (inputForce + strengthAdded) * distanceProportion;
 
@@ -234,20 +251,21 @@ public class BallMovement : MonoBehaviour
 
     public Vector3 GetDirectionValue()
     {
-        if (verticalInput)
+        switch (verticalInput)
         {
-            return -new Vector3(dir.x, 0f, dir.y);
-        }
-        else
-        {
-            return new Vector3(-dir.y, 0f, dir.x);
+            case 0:
+                return new Vector3(-dir.x, 0f, -dir.y);
+            case 1:
+                return new Vector3(-dir.y, 0f, dir.x);
+            case 2:
+                return new Vector3(dir.x, 0f, dir.y);
+            case 3:
+                return new Vector3(dir.y, 0f, -dir.x);
+            default:
+                return Vector3.zero;
         }
     }
 
-    public bool IsCameraVertical()
-    {
-        return verticalInput;
-    }
 
     public bool AimState()
     {
