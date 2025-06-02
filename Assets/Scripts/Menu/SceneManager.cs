@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class SceneManager : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
-    public GameObject canvasObject;
+    public GameObject canvas;
     public float fadeDuration = 0.5f;
 
-    private void Awake()
+    private void Start()
     {
-        canvasObject.SetActive(false);
+        canvas.SetActive(false);
     }
 
     public void GoToMainMenu()
@@ -26,7 +26,7 @@ public class SceneManager : MonoBehaviour
 
     private IEnumerator FadeOutAndLoad(string scene)
     {
-        canvasObject.SetActive(true);
+        canvas.SetActive(true);
         canvasGroup.alpha = 0f;
 
         float elapsedTime = 0f;
