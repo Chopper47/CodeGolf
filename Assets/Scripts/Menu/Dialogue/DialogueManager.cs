@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     //Deactivates the ball when dialogue starts and activates it when it ends
     public GameObject ball;
-
+    private GameObject pauseButton;
     /// <summary>
     /// Singleton
     /// </summary>
@@ -47,6 +47,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="dialogue"></param>
     public void StartDialogue(Dialogue dialogue)
     {
+        pauseButton = GetPauseButton();
+        pauseButton.SetActive(false);
         if (ball != null) ball.SetActive(false);
         if (dialoguePanel != null) dialoguePanel.SetActive(true);
         if (dialogueImage != null) dialogueImage.SetActive(true);
@@ -130,6 +132,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         dialogueImage.SetActive(false);
+        pauseButton.SetActive(true);
         if (ball != null) ball.SetActive(true);
         
     }
@@ -158,4 +161,8 @@ public class DialogueManager : MonoBehaviour
         objectToActivate.SetActive(true);
     }
 
+    public GameObject GetPauseButton()
+    {
+        return GameObject.FindGameObjectWithTag("PauseButton");
+    }
 }

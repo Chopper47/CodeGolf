@@ -14,6 +14,7 @@ TagManager:
   - 2Star
   - 3Star
   - GoldText
+  - PauseButton
   layers:
   - Default
   - TransparentFX

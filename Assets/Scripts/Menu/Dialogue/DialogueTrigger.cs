@@ -31,4 +31,6 @@ public class DialogueTrigger : MonoBehaviour
             dialogueManager.StartDialogue(dialogue);
         }
     }
+
+    
 }
