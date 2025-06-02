@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionPoint: {fileID: 2973122263284084083}
-  speed: 5
+  speed: 20
+  amplifier: 1.81
+  cooldown: 3
 --- !u!1001 &9125656997599980387
 PrefabInstance:
   m_ObjectHideFlags: 0
