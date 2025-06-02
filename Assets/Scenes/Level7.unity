@@ -1628,11 +1628,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 736818906}
     m_Modifications:
-    - target: {fileID: 1093256215641713316, guid: 714dd9ef899683740a9749066982cafc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4b6bc5d0520020244a62414abc62b0c8, type: 2}
     - target: {fileID: 443637563744767894, guid: 5c4809296e8f2574fbc506e078506c46,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1698,6 +1693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlockRamp
       objectReference: {fileID: 0}
+    - target: {fileID: 1093256215641713316, guid: 714dd9ef899683740a9749066982cafc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b6bc5d0520020244a62414abc62b0c8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3355,6 +3355,26 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2075052485}
+    - target: {fileID: 2451757041344705104, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451757041344705104, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1659194560}
+    - target: {fileID: 2451757041344705104, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451757041344705104, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level8
+      objectReference: {fileID: 0}
     - target: {fileID: 4060375943298346282, guid: 0a27d50e8a8f0014b8bafb8d9754cf6e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3687,6 +3707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3c1853c68f14f47b4e48b969f1c01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invertVerticalAxis: 0
+  invertHorizontalAxis: 0
 --- !u!54 &1066296570
 Rigidbody:
   m_ObjectHideFlags: 0

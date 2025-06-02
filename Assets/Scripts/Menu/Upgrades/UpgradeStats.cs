@@ -18,9 +18,11 @@ public class UpgradeStats : MonoBehaviour
     public int costToUpgradeAccuracy;
     public int costToUpgradeShield;
 
-    private void Awake()
+    private void Start()
     {
-        
+        ChangeForceLevelText();
+        ChangeAccuracyLevelText();
+        ChangeShieldLevelText();
     }
 
     
