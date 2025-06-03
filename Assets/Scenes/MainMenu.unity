@@ -10251,12 +10251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e224f07d92fde4a9be488fc37518b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmount: 1000
+  goldAmount: 0
   gemAmount: 0
   strengthLevel: 0
   accuracyLevel: 0
   shieldLevel: 0
-  levelsCompleted: 7
+  levelsCompleted: 0
   goldAmountText: {fileID: 2125255880}
   gemAmountText: {fileID: 980499534}
 --- !u!1 &1534377310
