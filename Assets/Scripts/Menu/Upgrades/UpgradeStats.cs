@@ -20,6 +20,7 @@ public class UpgradeStats : MonoBehaviour
 
     private void Start()
     {
+        playerInfo = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>();
         ChangeForceLevelText();
         ChangeAccuracyLevelText();
         ChangeShieldLevelText();
@@ -34,7 +35,6 @@ public class UpgradeStats : MonoBehaviour
     {
         if(playerInfo.goldAmount >= costToUpgradeForce)
         {
-
             if(GameObject.FindGameObjectWithTag("SaveManager").GetComponent<PlayerInfo>().strengthLevel < 10)
             {
                 CostToUpgrade(costToUpgradeForce);
