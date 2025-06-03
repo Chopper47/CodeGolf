@@ -17,6 +17,7 @@ public class ShieldPowerUp : MonoBehaviour
                 transform.parent = ball.transform;
                 transform.localPosition = Vector3.zero;
                 touched = true;
+                gameObject.SetActive(false);
             }
         }
     }

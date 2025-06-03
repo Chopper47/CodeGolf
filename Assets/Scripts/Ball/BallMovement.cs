@@ -275,6 +275,7 @@ public class BallMovement : MonoBehaviour
 
     public void Stopped()
     {
+        Destroy(shield);
         activeShield = false;
         shield = null;
         StopCoroutine(shieldWait);
