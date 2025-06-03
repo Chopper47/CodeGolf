@@ -10,7 +10,14 @@ public class SendBackAction : MonoBehaviour
 
         if(ball)
         {
-            ball.SendToLastPosition();
+            if(ball.GetShieldActive())
+            {
+                ball.Stopped();
+            }
+            else
+            {
+                ball.SendToLastPosition();
+            }
         }
     }
 }

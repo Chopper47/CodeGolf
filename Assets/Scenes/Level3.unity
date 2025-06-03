@@ -1879,6 +1879,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1345439610}
+    - target: {fileID: 4623991732391904103, guid: 154328c8e98f866438ee9ca02c2140c3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5659433106490273662, guid: 154328c8e98f866438ee9ca02c2140c3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1977,6 +1982,11 @@ PrefabInstance:
     - target: {fileID: 5659433106490273662, guid: 154328c8e98f866438ee9ca02c2140c3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566976766115700511, guid: 154328c8e98f866438ee9ca02c2140c3,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927628838142235190, guid: 154328c8e98f866438ee9ca02c2140c3,

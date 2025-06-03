@@ -36,15 +36,22 @@ public class RoboticArm : MonoBehaviour
 
             if (ball)
             {
-                ball.GetComponent<Collider>().isTrigger = true;
-                ball.GetComponent<Rigidbody>().useGravity = false;
-                ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                if(!ball.GetShieldActive()) 
+                { 
+                    ball.GetComponent<Collider>().isTrigger = true;
+                    ball.GetComponent<Rigidbody>().useGravity = false;
+                    ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
 
-                animator.SetBool("grabbed", true);
-                ball.transform.position = grabPoint.position;
-                ball.transform.parent = ballFollow.transform;
-                canGrab = false;
-                ball.Grabbed();
+                    animator.SetBool("grabbed", true);
+                    ball.transform.position = grabPoint.position;
+                    ball.transform.parent = ballFollow.transform;
+                    canGrab = false;
+                    ball.Grabbed();
+                }
+                else
+                {
+                    ball.Stopped();
+                }
             }
         }
     }

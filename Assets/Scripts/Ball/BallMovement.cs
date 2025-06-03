@@ -56,6 +56,11 @@ public class BallMovement : MonoBehaviour
 
     Transform lastChangeTransform;
 
+    GameObject shield;
+    bool activeShield = false;
+
+    Coroutine shieldWait;
+
     public void Awake()
     {
         checkSpeed = false;
@@ -104,6 +109,11 @@ public class BallMovement : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             checkSpeed = false;
+            if(shieldWait!=null)
+            {
+                StopCoroutine(shieldWait);
+                activeShield = false;
+            }
         }
 
         if (stoppedMoving && !grabbed)
@@ -118,7 +128,6 @@ public class BallMovement : MonoBehaviour
                     switch (t.phase)
                     {
                         case TouchPhase.Began:
-                            directionIndicator.ResetRotation();
                             aiming = true;
                             joystickParent.SetActive(true);
                             startingPos = new Vector3(t.position.x, t.position.y, 0f);
@@ -213,6 +222,14 @@ public class BallMovement : MonoBehaviour
                             joystickParent.SetActive(false);
                             joystick.transform.localPosition = Vector3.zero;
                             hitCounter.Hit();
+
+                            if(shield!=null)
+                            {
+                                shield.SetActive(true);
+                                shieldWait = StartCoroutine(WaitToNotSave());
+                                activeShield = true;
+                            }
+
                             break;
                     }
                 }
@@ -241,9 +258,37 @@ public class BallMovement : MonoBehaviour
         slowed = true;
     }
 
+    public void ShieldGain(GameObject newShield)
+    {
+        shield = newShield;
+    }
+
     public void NotSlow()
     {
         slowed = false;
+    }
+
+    public bool GetShieldActive()
+    {
+        return activeShield;
+    }
+
+    public void Stopped()
+    {
+        activeShield = false;
+        shield = null;
+        StopCoroutine(shieldWait);
+    }
+
+    IEnumerator WaitToNotSave()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        if(shield != null)
+        {
+            shield.SetActive(false);
+            activeShield = false;
+        }
     }
 
     public Vector3 GetDirectionValue()
