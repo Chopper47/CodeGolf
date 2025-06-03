@@ -21,8 +21,8 @@ public class SaveManager : MonoBehaviour
     }
     private void Start()
     {
-        LoadPlayerData();
         SavePlayerData();
+        LoadPlayerData();
     }
     public void SavePlayerData()
     {
