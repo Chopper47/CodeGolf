@@ -10,7 +10,7 @@ public class SendBackAction : MonoBehaviour
 
         if(ball)
         {
-            if(ball.GetShieldActive())
+            if(ball.GetShieldActive() == true)
             {
                 ball.Stopped();
             }
