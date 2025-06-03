@@ -286,7 +286,7 @@ public class BallMovement : MonoBehaviour
 
     IEnumerator WaitToNotSave()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(shieldActiveTime);
         
         if(shield != null)
         {
