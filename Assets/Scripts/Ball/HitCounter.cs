@@ -9,6 +9,7 @@ public class HitCounter : MonoBehaviour
     public TextMeshProUGUI hitsShower;
     public TextMeshProUGUI endShower;
 
+    [SerializeField] private int level;
     [SerializeField] GameObject holeCanvas;
     int hits = 0;
 
@@ -55,7 +56,13 @@ public class HitCounter : MonoBehaviour
         if (SaveManager.instance)
         {
             PlayerInfo playerInfo = SaveManager.instance.gameObject.GetComponent<PlayerInfo>();
-            playerInfo.levelsCompleted++;
+            if (playerInfo.levelsCompleted < 7)
+            { 
+                if(level == playerInfo.levelsCompleted + 1)
+                {
+                    playerInfo.levelsCompleted++;
+                }
+            } 
             playerInfo.goldAmount += 100;
             if (hits >= 5)
             {

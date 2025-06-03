@@ -3012,6 +3012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194720211419033191, guid: 4769367286870644691b0919c9021b15,
         type: 3}
+      propertyPath: level
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194720211419033191, guid: 4769367286870644691b0919c9021b15,
+        type: 3}
       propertyPath: endShower
       value: 
       objectReference: {fileID: 1679835691}
