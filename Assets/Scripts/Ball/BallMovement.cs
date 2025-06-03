@@ -176,7 +176,15 @@ public class BallMovement : MonoBehaviour
                             directionIndicator.StopCoroutineDispersion();
                             directionIndicator.DissapearArrow();
 
-                            switch(verticalInput)
+                            if (shield != null)
+                            {
+                                shield.SetActive(true);
+                                shieldWait = StartCoroutine(WaitToNotSave());
+                                activeShield = true;
+                            }
+
+
+                            switch (verticalInput)
                             {
                                 case 0:
                                     forceToApply = new Vector3(-dir.x, 0f, -dir.y);
@@ -225,13 +233,6 @@ public class BallMovement : MonoBehaviour
                             joystickParent.SetActive(false);
                             joystick.transform.localPosition = Vector3.zero;
                             hitCounter.Hit();
-
-                            if(shield!=null)
-                            {
-                                shield.SetActive(true);
-                                shieldWait = StartCoroutine(WaitToNotSave());
-                                activeShield = true;
-                            }
 
                             break;
                     }
