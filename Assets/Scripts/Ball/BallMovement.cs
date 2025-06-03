@@ -56,16 +56,18 @@ public class BallMovement : MonoBehaviour
 
     Transform lastChangeTransform;
 
-    GameObject shield;
+    public GameObject shield;
     bool activeShield = false;
-
     Coroutine shieldWait;
+    float shieldActiveTime = 1f;
+    public float shieldScaling = 0.2f;
 
     public void Awake()
     {
         checkSpeed = false;
         directionIndicator = GetComponent<DirectionIndicator>();
         hitCounter = GetComponent<HitCounter>();
+        shield.SetActive(false);
     }
 
     private void Start()
@@ -84,6 +86,7 @@ public class BallMovement : MonoBehaviour
         if (info != null)
         {
             strengthAdded = strengthScaling * info.strengthLevel; //*level
+            shieldActiveTime = shieldScaling * info.shieldLevel;
         }
         else
         {
@@ -275,9 +278,8 @@ public class BallMovement : MonoBehaviour
 
     public void Stopped()
     {
-        Destroy(shield);
+        shield.SetActive(false);
         activeShield = false;
-        shield = null;
         StopCoroutine(shieldWait);
     }
 
