@@ -27,7 +27,8 @@ public class SpeedBoost : MonoBehaviour
         RampForceProyection ball = other.GetComponent<RampForceProyection>();
 
         if (ball != null && canBoost) 
-        { 
+        {
+            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
             ball.GetComponent<Rigidbody>().AddForce(dirVector*amplifier*speed, ForceMode.Impulse);
             ball.StartCheck();
             canBoost = false;

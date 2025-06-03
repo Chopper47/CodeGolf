@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c84fc383315c54c96d6ca52568e454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputForce: 25
+  inputForce: 50
   strengthScaling: 2.5
   slowProportion: 2
   mask:

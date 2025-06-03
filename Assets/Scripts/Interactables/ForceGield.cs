@@ -7,6 +7,8 @@ public class ForceGield : MonoBehaviour
     public float interval = 0.8f;
     public float waitStart = 0f;
 
+    public GameObject forceField;
+
     public void Start()
     {
         InvokeRepeating("Alternate", waitStart, interval);
@@ -14,6 +16,6 @@ public class ForceGield : MonoBehaviour
 
     void Alternate()
     {
-        gameObject.SetActive(!gameObject.activeInHierarchy);
+        forceField.gameObject.SetActive(!forceField.activeSelf);
     }
 }

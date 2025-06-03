@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabPoint: {fileID: 6220277125931946712}
   ballFollow: {fileID: 6846423242174998675}
-  throwForce: 5
+  throwForce: 15
 --- !u!4 &4818062663612861220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2305086608288966796, guid: 277b496e05b04ff4bb22b72e9d4fa049,
