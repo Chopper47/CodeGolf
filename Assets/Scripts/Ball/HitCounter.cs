@@ -47,7 +47,6 @@ public class HitCounter : MonoBehaviour
 
             if (hits >= 8)
             {
-                SaveManager.instance.gameObject.GetComponent<PlayerInfo>().goldAmount += 25;
                 secondStar.SetActive(false);
             }
         }
@@ -56,6 +55,7 @@ public class HitCounter : MonoBehaviour
         if (SaveManager.instance)
         {
             PlayerInfo playerInfo = SaveManager.instance.gameObject.GetComponent<PlayerInfo>();
+            playerInfo.levelsCompleted++;
             playerInfo.goldAmount += 100;
             if (hits >= 5)
             {

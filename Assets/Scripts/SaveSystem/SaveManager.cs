@@ -43,7 +43,7 @@ public class SaveManager : MonoBehaviour
 
         player.levelsCompleted = data.levelsCompleted;
 
-        //player.SetLevelsCompleted();
+        player.SetLevelsCompleted();
 
 
         
