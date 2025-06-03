@@ -77,7 +77,7 @@ public class RoboticArm : MonoBehaviour
 
     IEnumerator SolidBall()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.4f);
 
         ball.GetComponent<Collider>().isTrigger = false;
         ball.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
